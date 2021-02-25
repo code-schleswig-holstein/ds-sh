@@ -1,0 +1,19 @@
+{
+  "name": "ITVSH Design System Dokumentation",
+  "version": "0.0.1",
+  "description": "Dokumentation zum Design System des ITVSH",
+  "main": "index.js",
+  "authors": {
+    "name": "Christopher Krawietz",
+    "email": "krawietz@new-communication.de"
+  },
+  "repository": "git@gitlab.nc-lab.de:nc/Design-System-Doku.git/ITVSH Design System Dokumentation",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
