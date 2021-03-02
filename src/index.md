@@ -1,6 +1,4 @@
 ---
-home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
 tagline: Dokumentation zum Design System des ITVSH
 actionText: Quick Start →
 actionLink: /guide/

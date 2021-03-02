@@ -1,21 +1,13 @@
 <template>
-  <ParentLayout>
-    <template #sidebar-top>
-
-    </template>
-    <template #page-bottom>
-
-    </template>
-  </ParentLayout>
+<Content/>
 </template>
 
 <script>
-import ParentLayout from '@parent-theme/layouts/Layout.vue'
-
 export default {
-  name: 'Layout',
-  components: {
-    ParentLayout,
-  }
+  name: "Layout"
 }
 </script>
+
+<style scoped>
+
+</style>

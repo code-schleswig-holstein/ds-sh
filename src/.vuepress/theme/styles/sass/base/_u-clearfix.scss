@@ -1,0 +1,5 @@
+@use "../abstracts/mixins";
+
+.u-clearfix {
+  @include mixins.clearfix;
+}

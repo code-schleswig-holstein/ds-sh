@@ -1,0 +1,18 @@
+.u-ie11hide {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.u-ie11show {
+
+  display: none;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    & {
+      display: block;
+    }
+  }
+}

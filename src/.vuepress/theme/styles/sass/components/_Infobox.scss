@@ -1,0 +1,10 @@
+@use "../abstracts/constants";
+@use "../abstracts/colors";
+
+.Infobox {
+  position: relative;
+  margin-left: -(constants.$gutter-width*2);
+  margin-right: -(constants.$gutter-width*2);
+  padding: constants.$gutter-width*2;
+  background-image: linear-gradient(135deg, #E9F7F6 0%, #ECF2F8 100%);
+}

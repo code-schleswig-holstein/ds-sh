@@ -1,0 +1,42 @@
+@use "../abstracts/colors";
+
+.u-background--white {
+  background-color: colors.$color-white;
+}
+
+.u-background--sh-blau {
+  background-color: colors.$color-sh-blau;
+}
+
+.u-background--itvsh-blau {
+  background-color: colors.$color-itvsh-blau;
+}
+
+.u-background--itvsh-magenta {
+  background-color: colors.$color-itvsh-magenta;
+}
+
+.u-background--sh-grau-10 {
+  background-color: colors.$color-sh-grau-10;
+}
+
+.u-background--sh-blau-10 {
+  background-color: colors.$color-sh-blau-10;
+}
+
+.u-background--sh-blau-05 {
+  background-color: colors.$color-sh-blau-05;
+}
+
+.u-background--sek01 {
+  background-color: colors.$color-sek01;
+}
+
+
+.u-background--gradient-itvsh-blau-sek01 {
+  background-image: linear-gradient(135deg, #E9F7F6 0%, #ECF2F8 100%);
+}
+
+.u-background--gradient-itvsh-10 {
+  background-image: linear-gradient(135deg, #ECF2F8 0%, #FBEAF3 100%);
+}

@@ -1,0 +1,38 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+.SkipNavigation {
+  @include mixins.default-p;
+
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+
+  &:active,
+  &:focus {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    z-index: functions.z(constants.$z-header, skipnavigation);
+    width: auto;
+    white-space: inherit;
+    color: colors.$color-sh-blau;
+    background-color: colors.$color-white;
+    box-shadow: 0 20px 60px 0 rgba(colors.$color-sh-blau, 0.15);
+    top: 0;
+    left: 0;
+    padding: constants.$gutter-width;
+  }
+}

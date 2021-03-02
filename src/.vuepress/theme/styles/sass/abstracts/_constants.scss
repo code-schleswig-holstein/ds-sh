@@ -1,0 +1,51 @@
+// ie9 svg filter
+$experimental-support-for-svg: false;
+
+//$container-style: fluid;
+$show-grid-backgrounds: false;
+
+$legacy-support-for-ie: false;
+$legacy-support-for-ie6: $legacy-support-for-ie;
+$legacy-support-for-ie7: $legacy-support-for-ie;
+
+// Support for microsoft in experimental css3 properties (-ms).
+$experimental-support-for-microsoft: true;
+$experimental-support-for-pie: false;
+$experimental-support-for-svg: true;
+
+// Grid Settings
+$breakpoints: (
+  xxs: 320px,
+  xs: 576px,
+  sm: 768px,
+  md: 960px,
+  lg: 1248px,
+  xl: 1504px
+);
+
+
+// http://gridcalculator.dk/#/1200/12/32/16
+$nudge: 8px;
+$gutter-width: $nudge*2;
+$susy-columns: 12;
+$col-width: 128;  // width of one col with gutter. used to calculate respond-to-grid and limitWidth
+$outer-pad: 4; // added in container as vw and used to calculate respond-to-grid media queries
+
+
+// z-index: z($z-main, mainmenu);
+
+$z-main: main, footer, scrolltop, servicenavigation, mainmenu, searchbar, header, tooltip;
+$z-header: mainmenu, logo, skipnavigation;
+
+// font base for px/em translation
+$base-font-size: 16;
+
+// $rfs-base-value: 1.25
+$rfs-factor: 10;
+$rfs-breakpoint: 1670;
+
+$mobile-break: md;
+
+$header-height-mobile: 72px;
+$header-height-desktop: 184px;
+$header-height-scroll: 114px;

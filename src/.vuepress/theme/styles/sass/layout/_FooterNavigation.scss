@@ -1,0 +1,17 @@
+@use "../abstracts/colors";
+
+.FooterNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  & > * + * {
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 1px solid colors.$color-white;
+  }
+}
+
+.FooterNavigation-item {
+
+}

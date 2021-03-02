@@ -1,0 +1,312 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+@use "../abstracts/functions";
+@use "../abstracts/icons";
+
+.MenuSitemapPages {
+  position: relative;
+}
+
+.MenuSitemapPages-menuPanel {
+  display: block;
+  width: 100%;
+}
+
+.MenuSitemapPages-level1-list {
+  position: relative;
+  @include mixins.default-p;
+  list-style: none;
+  padding: 0;
+}
+
+.MenuSitemapPages-level1-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid colors.$color-sh-blau-10;
+}
+
+.MenuSitemapPages-level1-link {
+  display: block;
+  @include mixins.font-AvenirNextLTPro-Demi;
+  @include mixins.font-size(18px);
+  line-height: 1;
+  color: colors.$color-sh-blau;
+  position: relative;
+  transition: color 0.2s ease;
+  @include mixins.padding-top(constants.$gutter-width);
+  @include mixins.padding-bottom(constants.$gutter-width);
+
+  &:not(.has-children)::after {
+    position: relative;
+    display: inline-block;
+    right: 0;
+    content: "";
+    vertical-align: middle;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.2em;
+    margin-left: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-intern}</g></svg>');
+  }
+
+  &:hover,
+  &:focus {
+    color: colors.$color-itvsh-blau;
+
+    &:not(.has-children)::after {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-intern}</g></svg>');
+    }
+
+    & .MenuSitemapPages-level1-menuIcon {
+      fill: colors.$color-itvsh-blau;
+    }
+  }
+
+  &.is-open,
+  &.is-activePage {
+    color: colors.$color-itvsh-magenta;
+  }
+
+  &.is-activePage {
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+
+    &:not(.has-children)::after {
+      color: colors.$color-white;
+    }
+  }
+}
+
+.MenuSitemapPages-level1-menuIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.8em;
+  height: 0.8em;
+  fill: colors.$color-itvsh-magenta;
+  margin-top: -0.2em;
+  margin-left: 0.5em;
+  margin-right: 0;
+  cursor: pointer;
+  background: #0000;
+  border: none;
+  padding: 0;
+}
+
+.MenuSitemapPages-level1-menuIcon-open {
+  display: block;
+
+  .MenuSitemapPages-level1-menuIcon.is-open & {
+    display: none;
+  }
+}
+
+.MenuSitemapPages-level1-menuIcon-close {
+  display: none;
+
+  .MenuSitemapPages-level1-menuIcon.is-open & {
+    display: block;
+  }
+}
+
+.MenuSitemapPages-level2 {
+
+  height: 0;
+  overflow: hidden;
+  background-color: colors.$color-white;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+
+
+  &.is-open {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.MenuSitemapPages-level2-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid colors.$color-sh-blau-10;
+}
+
+.MenuSitemapPages-level2-link {
+  display: block;
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  line-height: 1;
+  color: colors.$color-sh-blau;
+  position: relative;
+  transition: color 0.2s ease;
+  @include mixins.padding-left(constants.$gutter-width*2);
+  @include mixins.padding-top(constants.$gutter-width);
+  @include mixins.padding-bottom(constants.$gutter-width);
+
+  &:focus {
+    outline-offset: -2px !important;
+  }
+
+  &:not(.has-children)::after {
+    position: relative;
+    display: inline-block;
+    right: 0;
+    content: "";
+    vertical-align: middle;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.2em;
+    margin-left: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-intern}</g></svg>');
+  }
+
+  &:hover,
+  &:focus {
+    color: colors.$color-itvsh-blau;
+
+    &:not(.has-children)::after {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-intern}</g></svg>');
+    }
+
+    & .MenuSitemapPages-level1-menuIcon {
+      fill: colors.$color-itvsh-blau;
+    }
+  }
+
+  &.is-open {
+    color: colors.$color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+
+    &:not(.has-children)::after {
+      color: colors.$color-white;
+    }
+  }
+}
+
+.MenuSitemapPages-level2-menuIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.8em;
+  height: 0.8em;
+  fill: colors.$color-itvsh-magenta;
+  margin-top: -0.2em;
+  margin-left: 0.5em;
+  margin-right: 0;
+  cursor: pointer;
+  background: #0000;
+  border: none;
+  padding: 0;
+}
+
+.MenuSitemapPages-level2-menuIcon-open {
+  display: block;
+
+  .MenuSitemapPages-level2-menuIcon.is-open & {
+    display: none;
+  }
+}
+
+.MenuSitemapPages-level2-menuIcon-close {
+  display: none;
+
+  .MenuSitemapPages-level2-menuIcon.is-open & {
+    display: block;
+  }
+}
+
+.MenuSitemapPages-level3 {
+
+  height: 0;
+  overflow: hidden;
+  background-color: colors.$color-white;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+
+
+  &.is-open {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.MenuSitemapPages-level3-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid colors.$color-sh-blau-10;
+}
+
+.MenuSitemapPages-level3-link {
+  display: block;
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  line-height: 1;
+  color: colors.$color-sh-blau;
+  position: relative;
+  transition: color 0.2s ease;
+  @include mixins.padding-left(constants.$gutter-width*3);
+  @include mixins.padding-top(constants.$gutter-width);
+  @include mixins.padding-bottom(constants.$gutter-width);
+
+  &:focus {
+    outline-offset: -2px !important;
+  }
+
+  &:not(.has-children)::after {
+    position: relative;
+    display: inline-block;
+    right: 0;
+    content: "";
+    vertical-align: middle;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.2em;
+    margin-left: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-intern}</g></svg>');
+  }
+
+  &:hover,
+  &:focus {
+    color: colors.$color-itvsh-blau;
+
+    &:not(.has-children)::after {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-intern}</g></svg>');
+    }
+
+    & .MenuSitemapPages-level1-menuIcon {
+      fill: colors.$color-itvsh-blau;
+    }
+  }
+
+  &.is-open {
+    color: colors.$color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+
+    &:not(.has-children)::after {
+      color: colors.$color-white;
+    }
+  }
+}

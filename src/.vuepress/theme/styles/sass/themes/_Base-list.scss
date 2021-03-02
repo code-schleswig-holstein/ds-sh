@@ -1,0 +1,221 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/icons";
+
+.Base-ul {
+  @include mixins.default-p;
+  list-style: none;
+  padding: 0;
+
+  & > * + * {
+    margin-top: 0.75em;
+  }
+
+  li {
+    color: colors.$color-anthrazit;
+    padding-left: 1.5em;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: "•";
+      color: colors.$color-sek02;
+    }
+
+    .Base-theme--dark & {
+      color: colors.$color-white;
+
+      &::before {
+        color: colors.$color-white;
+      }
+    }
+  }
+
+  ul {
+    margin-left: 0.75em;
+    font-size: inherit;
+
+    & > * {
+      margin-top: 0.75em;
+    }
+
+    li::before {
+      content: "•";
+      color: colors.$color-sek02-10;
+    }
+  }
+}
+
+.Base-ul-unstyled {
+  @include mixins.default-p;
+  list-style: none;
+  padding: 0;
+
+  & > * + * {
+    margin-top: 0.75em;
+  }
+}
+
+.Base-ul-lines {
+  @include mixins.default-p;
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    color: colors.$color-itvsh-blau;
+    padding-left: 0;
+    @include mixins.padding(constants.$nudge 0);
+    border-bottom: 1px solid colors.$color-itvsh-blau;
+
+    &:first-of-type {
+      border-top: 1px solid colors.$color-itvsh-blau;
+    }
+
+    &:hover,
+    &:focus {
+      @include mixins.font-AvenirNextLTPro-Demi;
+    }
+  }
+}
+
+.Base-ul-inline {
+  @include mixins.default-p;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    flex-shrink: 0;
+    margin-bottom: 1em;
+    padding-left: 0;
+    padding-right: 1em;
+
+
+    &::before {
+      content: "";
+    }
+
+    ul {
+      margin-left: 0.5em;
+      padding: 0.25em 0 0;
+
+      li::before {
+        content: "";
+      }
+    }
+  }
+}
+
+
+.Base-ol {
+  @include mixins.default-p;
+  counter-reset: section;
+  padding: 0;
+
+  & > * + * {
+    margin-top: 0.75em;
+  }
+
+  li {
+    display: block;
+    position: relative;
+    padding-left: 2.5em;
+    color: colors.$color-anthrazit;
+
+    &::before {
+      display: inline-block;
+      content: counters(section, "") "";
+      counter-increment: section;
+      position: absolute;
+      left: 0;
+      width: 2em;
+      padding: 5px 0;
+      text-align: center;
+      @include mixins.font-size(14px);
+      border-radius: 5px 50% 50% 5px;
+      background-color: colors.$color-sek01;
+      color: colors.$color-white;
+      //border-right: 2px solid $color-orange;
+    }
+
+    .Base-theme--dark & {
+      color: colors.$color-white;
+
+      &::before {
+        color: colors.$color-white;
+      }
+    }
+  }
+
+  ol {
+    counter-reset: section;
+    font-size: inherit;
+
+    & > * {
+      margin-top: 0.75em;
+    }
+
+    li::before {
+      content: counters(section, ".") " ";
+      height: auto;
+    }
+
+    ol {
+      li {
+        padding-left: 3em;
+      }
+    }
+  }
+}
+
+
+.Base-ul--check {
+  li {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 1.75em;
+
+    &::before {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      vertical-align: middle;
+      width: 1.1em;
+      height: 1.1em;
+      background-repeat: no-repeat;
+      background-color: colors.$color-white;
+      background-size: 1.1em;
+      border-radius: 100%;
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-check-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-sek01}">#{icons.$symbol-check}</g></svg>');
+    }
+
+    .Base-theme--dark & {
+      color: colors.$color-white;
+
+      &::before {
+        color: colors.$color-white;
+      }
+    }
+  }
+
+  ul {
+    margin-left: 0.75em;
+    font-size: inherit;
+
+    & > * {
+      margin-top: 0.75em;
+    }
+
+    li::before {
+      content: "•";
+      color: colors.$color-sh-blau-40;
+    }
+  }
+}

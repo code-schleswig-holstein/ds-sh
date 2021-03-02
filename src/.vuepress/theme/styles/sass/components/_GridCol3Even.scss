@@ -1,0 +1,17 @@
+@use "sass:math";
+@use "../abstracts/mixins";
+
+.GridCol3Even-row--center {
+  justify-content: center;
+}
+
+.GridCol3Even-col {
+
+  @include mixins.respond-to-grid(5) {
+    width: math.percentage(6 / 12);
+  }
+
+  @include mixins.respond-to-grid(7) {
+    width: math.percentage(4 / 12);
+  }
+}

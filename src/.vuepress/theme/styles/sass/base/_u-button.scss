@@ -1,0 +1,5 @@
+@use "../abstracts/mixins";
+
+.u-resetButton {
+  @include mixins.resetButton;
+}

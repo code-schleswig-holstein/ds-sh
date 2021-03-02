@@ -1,0 +1,31 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.HeroHeadline {
+  background-color: colors.$color-sh-blau-05;
+  @include mixins.padding-top(constants.$gutter-width*4);
+
+  &::after {
+    content: "";
+    display: block;
+    background-image: linear-gradient(-10deg, colors.$color-white calc(50% - 1px), colors.$color-sh-blau-05 50%);
+    padding-bottom: 18%;
+  }
+}
+
+.HeroHeadline-grid {
+  position: relative;
+}
+
+.HeroHeadline-backlink {
+
+  margin-bottom: 0.25em;
+
+  @include mixins.respond-to-grid(7){
+    position: absolute;
+    bottom: 0;
+    left: -1.5em;
+    margin-bottom: 0;
+  }
+}

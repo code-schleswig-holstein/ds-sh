@@ -1,0 +1,33 @@
+@use "../abstracts/colors";
+
+.LoadMoreButton {
+
+  color: colors.$color-white;
+  fill: currentColor;
+  background-color: colors.$color-sh-blau;
+  //@include rfs(80px, width);
+  //@include rfs(80px, height);
+  //padding: 33%;
+  width: 80px;
+  height: 80px;
+  padding: 26px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: background-color 0.2s ease;
+  line-height: 1;
+  align-self: center;
+
+
+  &:hover {
+    background-color: colors.$color-sh-rot;
+  }
+
+  &.is-loading {
+    outline: 0 !important;
+    pointer-events: none;
+    cursor: pointer;
+    background-color: colors.$color-sh-rot;
+    animation: spin 1s linear infinite;
+  }
+}

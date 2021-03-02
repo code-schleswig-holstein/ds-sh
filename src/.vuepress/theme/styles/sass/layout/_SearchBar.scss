@@ -1,0 +1,159 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+@use "../abstracts/functions";
+
+.SearchBar-toggle {
+  color: colors.$color-sh-blau;
+  fill: currentColor;
+  border: none;
+  padding: 16px;
+  margin: 0;
+  margin-left: auto;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  text-transform: uppercase;
+  line-height: 1.5;
+
+  &.is-open,
+  &:focus,
+  &:hover {
+    color: colors.$color-sh-rot;
+  }
+}
+
+.SearchBar-toggleLabel {
+  .is-open & {
+    overflow: hidden;
+    width:0;
+    visibility: hidden;
+  }
+}
+
+.SearchBar-toggleIcon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  position: relative;
+}
+
+.SearchBar-toggleIcon-open {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
+  .is-open & {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+}
+
+.SearchBar-toggleIcon-close {
+  position: absolute;
+  top: 0;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transform: scale(0.5) rotate(-45deg);
+
+  .is-open & {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1)  rotate(0deg);
+  }
+}
+
+.SearchBar-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  visibility: hidden;
+  background-color: colors.$color-sh-blau-10;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  &.is-open {
+    padding-top: constants.$gutter-width;
+    padding-bottom: constants.$gutter-width;
+    padding-left: calc(#{constants.$outer-pad}vw + #{constants.$gutter-width});
+    padding-right: calc(#{constants.$outer-pad}vw + #{constants.$gutter-width});
+    visibility: visible;
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    overflow: initial;
+  }
+}
+
+.SearchBar-form {
+  display: flex;
+  width: 100%;
+  margin-left: 0;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    max-width: 400px;
+    margin-left: auto;
+  }
+}
+
+.SearchBar-label {
+  display: none;
+  color: colors.$color-sh-blau;
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-right: 0.5em;
+
+  @include mixins.respond-to(xs) {
+    display: inline;
+  }
+}
+
+.SearchBar-input {
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  width: 100%;
+  color: colors.$color-anthrazit;
+  line-height: 1.5;
+  padding: 0;
+  background-color: colors.$color-white;
+  border: 1px solid colors.$color-white;
+  -webkit-appearance: none;
+  overflow: hidden;
+  display: block;
+}
+
+.SearchBar-button {
+  background-color: colors.$color-sh-blau;
+  border: none;
+  margin: 0;
+  line-height: 1;
+  padding: 0 0.75em;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.SearchBar-button-icon {
+  display: block;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: white;
+  fill: currentColor;
+}

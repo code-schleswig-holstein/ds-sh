@@ -1,0 +1,83 @@
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+
+/*
+
+limitWidth always inside the container, not in same div
+
+<div class="u-container [colorstyle here]">
+
+  <p>Text can be placed here</p>
+
+  <div class="u-limitWidth-[limitSize] u-align-center">
+    <p>Text can be placed here</p>
+
+    <div class="u-row">
+      <div class="[colwidth]">
+        <p>Text can be placed here</p>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+</div>
+
+ */
+
+// common styling applied to any column
+@mixin grid-col {
+  padding-left: constants.$gutter-width;
+  padding-right: constants.$gutter-width;
+}
+
+// common styling applied to any row
+@mixin grid-row {
+  margin-left: -(constants.$gutter-width);
+  margin-right: -(constants.$gutter-width);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+}
+
+.u-container {
+  padding-right: calc(#{constants.$outer-pad}vw + #{constants.$gutter-width});
+  padding-left: calc(#{constants.$outer-pad}vw + #{constants.$gutter-width});
+  width: 100%;
+}
+
+.u-align-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.u-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.u-row {
+  @include grid-row;
+}
+
+.u-col {
+  @include grid-col;
+  width: 100%;
+}
+
+// 1 col = 128
+// .u-limitWidth-1 = 182 - 32px = 96
+// .u-limitWidth-12 = 12*128 = 1536 - 2*gutterwidth = 1504
+@for $i from 1 through constants.$susy-columns {
+  .u-limitWidth-#{$i} {
+    width: 100%;
+    max-width: functions.col-width($i, false);
+  }
+}

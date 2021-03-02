@@ -1,0 +1,13 @@
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+.SectionMain {
+  position: relative;
+  z-index: functions.z(constants.$z-main, main);
+  padding-top: constants.$header-height-mobile;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    padding-top: constants.$header-height-desktop;
+  }
+}

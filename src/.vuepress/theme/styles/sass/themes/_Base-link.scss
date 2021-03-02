@@ -1,0 +1,298 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/icons";
+
+// https://www.jayfreestone.com/writing/wrapping-and-inline-pseudo-elements/
+.Base-link {
+  border: none;
+  cursor: pointer;
+  color: colors.$color-itvsh-blau;
+  font-weight: inherit;
+  display: inline;
+  transition: color 0.2s ease;
+  padding: 0;
+  background-color: transparent;
+
+  &.is-active,
+  &:hover,
+  .u-linkWrap:hover & {
+    color: colors.$color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+
+    &.is-active,
+    &:hover,
+    .u-linkWrap:hover & {
+      color: colors.$color-itvsh-magenta;
+    }
+  }
+}
+
+.Base-link-icon {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  margin-left: 0;
+  margin-right: 0.25em;
+  line-height: inherit;
+}
+
+.Base-link-iconOnly {
+  display: block;
+  fill: currentColor;
+  width: 1em;
+}
+
+// https://css-tricks.com/snippets/css/style-links-depending-on-destination/
+.Base-iconLink,
+.Base-iconLink-phone,
+.Base-iconLink-fax,
+.Base-iconLink-email,
+.Base-iconLink-file,
+.Base-iconLink-url,
+.Base-iconLink-section,
+.Base-iconLink-page {
+  color: colors.$color-itvsh-blau;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-weight: inherit;
+  display: inline-block;
+  padding-left: 1.5em;
+
+  transition: color 0.2s ease;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.2em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+  }
+
+  &.is-active,
+  &:hover,
+  .u-linkWrap:hover & {
+    color: colors.$color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+
+    &.is-active,
+    &:hover,
+    .u-linkWrap:hover & {
+      color: colors.$color-itvsh-magenta;
+    }
+  }
+}
+
+.Base-iconLink-section,
+.Base-iconLink[href*="#"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-section}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-section}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-white}">#{icons.$symbol-link-section}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-section}</g></svg>');
+      }
+    }
+  }
+}
+
+.Base-iconLink-page,
+.Base-iconLink[href^="t3://page"],
+.Base-iconLink[href^="t3://record"],
+.Base-iconLink[href^="/"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-intern}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-intern}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-white}">#{icons.$symbol-link-intern}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-intern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-intern}</g></svg>');
+      }
+    }
+  }
+}
+
+.Base-iconLink-url,
+.Base-iconLink[href^="http"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-extern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-extern}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-extern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-extern}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-extern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-white}">#{icons.$symbol-link-extern}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-extern-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-extern}</g></svg>');
+      }
+    }
+  }
+}
+
+.Base-iconLink-file,
+.Base-iconLink[href^="t3://file"],
+.Base-iconLink[href$=".zip"],
+.Base-iconLink[href$=".pdf"],
+.Base-iconLink[href$=".xlsx"],
+.Base-iconLink[href$=".docx"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-download-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-download-paper}</g><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-download-corner}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-download-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-download-paper}</g><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-download-corner}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-download-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-download-paper}</g><g fill="#{colors.$color-white}">#{icons.$symbol-link-download-corner}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-download-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-download-paper}</g><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-download-corner}</g></svg>');
+      }
+    }
+  }
+}
+
+.Base-iconLink-email,
+.Base-iconLink[href^="mailto:"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-mail-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-mail-paper}</g><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-mail-upper}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-mail-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-mail-paper}</g><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-mail-upper}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-mail-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-mail-paper}</g><g fill="#{colors.$color-white}">#{icons.$symbol-link-mail-upper}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-mail-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-mail-paper}</g><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-mail-upper}</g></svg>');
+      }
+    }
+  }
+}
+
+.Base-iconLink-phone,
+.Base-iconLink[href^="tel:"] {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-phone-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-phone}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-phone-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-phone}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-phone-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-white}">#{icons.$symbol-link-phone}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-phone-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-phone}</g></svg>');
+      }
+    }
+  }
+}
+
+
+.Base-iconLink-fax {
+  &::before {
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-fax-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-fax-base}</g><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-fax-paper}</g></svg>');
+  }
+
+  &.is-active,
+  .u-linkWrap:hover &,
+  &:hover {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-fax-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-fax-base}</g><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-fax-paper}</g></svg>');
+    }
+  }
+
+  .Base-theme--dark & {
+    &::before {
+      background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-fax-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-fax-base}</g><g fill="#{colors.$color-white}">#{icons.$symbol-link-fax-paper}</g></svg>');
+    }
+
+    .u-linkWrap:hover &,
+    &:hover {
+      &::before {
+        background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-fax-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-link-fax-base}</g><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-fax-paper}</g></svg>');
+      }
+    }
+  }
+}

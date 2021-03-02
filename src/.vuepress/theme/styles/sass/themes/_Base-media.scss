@@ -1,0 +1,29 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+
+.Base-figure {
+  display: table;
+  //margin-bottom: $gutter-width*2;
+}
+
+.Base-figure-image {
+  display: block;
+  width: 100%;
+  vertical-align: bottom;
+  //margin-bottom: $gutter-width;
+}
+
+.Base-figcaption {
+  @include mixins.default-small;
+
+  display: table-caption;
+  caption-side: bottom;
+
+  //margin-bottom: $gutter-width;
+
+  color: colors.$color-black;
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+  }
+}

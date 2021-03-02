@@ -1,0 +1,49 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.u-paddingTop--0 {
+  padding-top: 0 !important;
+}
+
+.u-paddingRight--0 {
+  padding-right: 0 !important;
+}
+
+.u-paddingBottom--0 {
+  padding-bottom: 0 !important;
+}
+
+.u-paddingLeft--0 {
+  padding-left: 0 !important;
+}
+
+@for $i from 1 through 4 {
+  .u-paddingTop--#{$i} {
+    padding-top: constants.$gutter-width*$i !important;
+  }
+
+  .u-paddingRight--#{$i} {
+    padding-right: constants.$gutter-width*$i !important;
+  }
+
+  .u-paddingBottom--#{$i} {
+    padding-bottom: constants.$gutter-width*$i !important;
+  }
+
+  .u-paddingLeft--#{$i} {
+    padding-left: constants.$gutter-width*$i !important;
+  }
+}
+
+// responsive padding
+// 1 = $susy-gutter-width: 16px/1rem on $rfs-breakpoint: 1670;
+// 8 = $susy-gutter-width: 128px/8rem on $rfs-breakpoint: 1670;
+@for $i from 1 through 8 {
+  .u-paddingTop--r#{$i} {
+    @include mixins.padding-top(constants.$gutter-width*$i !important);
+  }
+
+  .u-paddingBottom--r#{$i} {
+    @include mixins.padding-bottom(constants.$gutter-width*$i !important);
+  }
+}

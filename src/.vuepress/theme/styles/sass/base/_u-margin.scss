@@ -1,0 +1,49 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.u-marginTop--0 {
+  margin-top: 0 !important;
+}
+
+.u-marginRight--0 {
+  margin-right: 0 !important;
+}
+
+.u-marginBottom--0 {
+  margin-bottom: 0 !important;
+}
+
+.u-marginLeft--0 {
+  margin-left: 0 !important;
+}
+
+@for $i from 1 through 4 {
+  .u-marginTop--#{$i} {
+    margin-top: constants.$gutter-width*$i !important;
+  }
+
+  .u-marginRight--#{$i} {
+    margin-right: constants.$gutter-width*$i !important;
+  }
+
+  .u-marginBottom--#{$i} {
+    margin-bottom: constants.$gutter-width*$i !important;
+  }
+
+  .u-marginLeft--#{$i} {
+    margin-left: constants.$gutter-width*$i !important;
+  }
+}
+
+// responsive margin
+// 1 = $susy-gutter-width: 16px/1rem on $rfs-breakpoint: 1670;
+// 8 = $susy-gutter-width: 128px/8rem on $rfs-breakpoint: 1670;
+@for $i from 1 through 8 {
+  .u-marginTop--r#{$i} {
+    @include mixins.margin-top(constants.$gutter-width*$i !important);
+  }
+
+  .u-marginBottom--r#{$i} {
+    @include mixins.margin-bottom(constants.$gutter-width*$i !important);
+  }
+}

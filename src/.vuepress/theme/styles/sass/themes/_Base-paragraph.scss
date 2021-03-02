@@ -1,0 +1,28 @@
+@use "../abstracts/colors";
+@use "../abstracts/mixins";
+
+.Base-p {
+  @include mixins.default-p;
+  color: colors.$color-anthrazit;
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+  }
+}
+
+.Base-p--small {
+  @include mixins.default-small;
+}
+
+.Base-p--large {
+  @include mixins.default-large;
+  color: colors.$color-anthrazit;
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+  }
+}
+
+.Base-p--block {
+  display: block;
+}

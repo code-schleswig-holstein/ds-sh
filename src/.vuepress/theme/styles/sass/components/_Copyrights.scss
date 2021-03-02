@@ -1,0 +1,32 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.Copyrights {
+  position: relative;
+}
+
+.Copyrights-container {
+  position: relative;
+
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  @include mixins.margin-bottom(constants.$gutter-width);
+}
+
+.Copyrights-icon {
+  width: 30px;
+  height: 30px;
+  fill: colors.$color-white;
+  @include mixins.margin-right(constants.$nudge);
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.Copyrights-content {
+  text-align: left;
+}

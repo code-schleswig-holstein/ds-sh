@@ -1,0 +1,52 @@
+// utils
+@use "abstracts/constants";
+@use "abstracts/colors";
+@use "abstracts/icons";
+@use "abstracts/easings";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+
+// vendors
+//@forward "../node_modules/rfs/scss";
+
+// Base
+@use "base/webfonts";
+@use "base/normalize";
+@use "base/u-textAlign";
+@use "base/u-stack";
+@use "base/global";
+@use "base/animations";
+
+
+// themes
+@use "themes/Base";
+@use "themes/Base-button";
+//@import "themes/Base-form";
+@use "themes/Base-headline";
+@use "themes/Base-link";
+@use "themes/Base-list";
+//@import "themes/Base-media";
+@use "themes/Base-paragraph";
+@use "themes/Base-table";
+@use "themes/RTE";
+
+// Select group title styling
+.cke_panel_grouptitle {
+  font-family: "Avenir Next W01 Regular", Helvetica, Arial, sans-serif;
+}
+
+// non styled panel list items like List styles
+.cke_panel_list {
+  font-family: "Avenir Next W01 Regular", Helvetica, Arial, sans-serif;
+}
+
+// STACK
+.cke_editable {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * + * {
+    margin-top: 1em;
+  }
+}

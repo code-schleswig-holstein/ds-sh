@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "../abstracts/mixins";
+@use "../abstracts/constants";
+
+.GridCol2Even-col {
+  @include mixins.margin-bottom(constants.$gutter-width);
+
+  @include mixins.respond-to-grid(5) {
+    width: math.percentage(6 / 12);
+  }
+}

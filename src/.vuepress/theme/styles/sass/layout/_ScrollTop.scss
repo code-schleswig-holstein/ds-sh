@@ -1,0 +1,30 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+
+.ScrollTop {
+  position: relative;
+  z-index: functions.z(constants.$z-main, scrolltop);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ScrollTop-link {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  color: colors.$color-sh-rot;
+  fill: currentColor;
+}
+
+
+.ScrollTop-icon {
+  display: block;
+  transition: transform 0.2s ease;
+
+  .ScrollTop-link:hover & {
+    transform: translateY(-(constants.$nudge));
+  }
+}

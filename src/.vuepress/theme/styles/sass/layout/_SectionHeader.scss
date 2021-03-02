@@ -1,0 +1,130 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+.SectionHeader-container {
+
+  position: fixed;
+  top: 0;
+  z-index: functions.z(constants.$z-main, header);
+  box-shadow: 0 2px 2px 0 rgba(colors.$color-black, 0.1);
+  width: 100%;
+  background-color: colors.$color-white;
+}
+
+.SectionHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: constants.$header-height-mobile;
+  transition: height 0.5s;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    flex-direction: column;
+    align-items: flex-start;
+    height: constants.$header-height-desktop;
+
+    .is-scroll & {
+      height: constants.$header-height-scroll;
+    }
+  }
+}
+
+.SectionHeader-metaSection {
+  margin-top: constants.$nudge;
+  margin-bottom: constants.$nudge;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 0;
+  display: none;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.SectionHeader-logoSection {
+  margin-right: constants.$gutter-width;
+  width: 50px;
+
+  & .SectionHeader-logo--large {
+    display: none;
+  }
+
+  & .SectionHeader-logo--small {
+    display: block;
+  }
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    width: auto;
+
+    & .SectionHeader-logo--large {
+      display: block;
+    }
+
+    & .SectionHeader-logo--small {
+      display: none;
+    }
+  }
+}
+
+
+.SectionHeader-menuSection {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-left: 0;
+}
+
+.SectionHeader-menuPanel {
+  visibility: hidden;
+  background-color: colors.$color-white;
+  position: absolute;
+  top: constants.$header-height-mobile;
+  left: 0;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  margin-left: calc(-#{constants.$outer-pad}vw - #{constants.$gutter-width});
+  margin-right: calc(-#{constants.$outer-pad}vw - #{constants.$gutter-width});
+  width: 100vw;
+
+  &.is-open {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    //transform: translateX(0);
+  }
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    visibility: visible;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+    position: static;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto !important;
+    overflow-y: inherit !important;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.SectionHeader-hamburgerSection {
+  display: block;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    display: none;
+  }
+}

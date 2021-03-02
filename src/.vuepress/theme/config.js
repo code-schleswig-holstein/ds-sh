@@ -1,10 +1,10 @@
-const { description } = require('../../package')
+const { description } = require('../../../package.json')
 
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'ITVSH Design System Dokumentation',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -38,6 +38,24 @@ module.exports = {
       }
     ]
   ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+            },
+          },
+        ],
+      },
+    ],
+  },
 
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
@@ -45,11 +63,15 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    logo: '/assets/img/logo.svg',
+    repoLabel: 'Gitlab',
+    repo: 'git@gitlab.nc-lab.de:nc/Design-System-Doku.git',
+    editLinks: true,
+    docsBranch: 'main',
+    editLinkText: 'Hilf uns diese Seite zu verbessern!',
+    lastUpdated: true,
+    searchPlaceholder: 'Suche',
+    smoothScroll: true,
     nav: [
       {
         text: 'Guide',

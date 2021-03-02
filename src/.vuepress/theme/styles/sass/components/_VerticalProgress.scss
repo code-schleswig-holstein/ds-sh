@@ -1,0 +1,223 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+@use "sass:math";
+
+.VerticalProgress {
+  position: relative;
+}
+
+.VerticalProgress-container {
+  background-color: colors.$color-sh-blau-05;
+
+  &:nth-child(even) {
+    background-color: colors.$color-sh-blau-10;
+  }
+}
+
+.VerticalProgress-step {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  @include mixins.padding(constants.$gutter-width*4 constants.$gutter-width*2);
+
+  @include mixins.respond-to-grid(5) {
+    flex-flow: row wrap;
+  }
+
+  @include mixins.respond-to-grid(8) {
+    flex-flow: row nowrap;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+
+    border-top: 20px solid colors.$color-sh-blau-05;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  &.is-even {
+    &::after {
+      border-top: 20px solid colors.$color-sh-blau-10;
+    }
+  }
+
+  &.is-last {
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.VerticalProgress-header {
+  display: inline-flex;
+  align-items: center;
+  flex-basis: 100%;
+  width: 100%;
+
+  @include mixins.margin-bottom(constants.$gutter-width*2);
+
+  @include mixins.respond-to-grid(8) {
+    margin-bottom: 0;
+    flex-basis: math.percentage(4 / 12);
+    width: math.percentage(4 / 12);
+  }
+}
+
+.VerticalProgress-prefix {
+  position: relative;
+  @include mixins.default-h1;
+  margin: 0;
+  @include mixins.padding(constants.$nudge constants.$gutter-width);
+  @include mixins.padding-right(constants.$gutter-width*2);
+  text-align: center;
+  background-size: 100%;
+  width: auto;
+  max-width: 80px;
+  max-height: 80px;
+  background-image: linear-gradient(135deg, colors.$color-itvsh-magenta 0%, colors.$color-itvsh-magenta 100%);
+  border-radius: 5px 50% 50% 5px;
+  color: colors.$color-white;
+  transition: background-image 0.2s ease;
+  @include mixins.margin-right(constants.$gutter-width);
+  z-index: 1;
+
+  &::before {
+    content: '';
+    border-radius: inherit;
+    background-image: linear-gradient(135deg, colors.$color-itvsh-blau 0%, colors.$color-itvsh-magenta 100%);
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    transition: opacity 0.45s ease;
+  }
+
+  &:hover,
+  .u-linkWrap:hover & {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.VerticalProgress-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 50%;
+  display: block;
+  overflow: hidden;
+  flex-basis: 100%;
+  transform: translate3d(0, 0, 0);
+  text-align: center;
+  opacity: 1;
+  @include mixins.margin-bottom(constants.$gutter-width);
+
+  @include mixins.respond-to-grid(5) {
+    margin-bottom: 0;
+    max-width: 100%;
+    flex-basis: math.percentage(2 / 12);
+    @include mixins.margin-right(math.percentage(1 / 12));
+  }
+
+  @include mixins.respond-to-grid(8) {
+    max-width: 100%;
+    flex-basis: math.percentage(1 / 12);
+    @include mixins.margin-right(math.percentage(1 / 12));
+  }
+}
+
+.VerticalProgress-icon-container svg {
+  padding-bottom: 100%;
+}
+
+.VerticalProgress-content {
+  width: 100%;
+  @include mixins.margin-bottom(constants.$gutter-width*2);
+  text-align: center;
+
+  @include mixins.respond-to-grid(5) {
+    margin-bottom: 0;
+    text-align: left;
+    flex-basis: math.percentage(6 / 12);
+    width: math.percentage(6 / 12);
+  }
+
+  @include mixins.respond-to-grid(8) {
+    flex-basis: math.percentage(4 / 12);
+    width: math.percentage(4 / 12);
+  }
+}
+
+.VerticalProgress-linkIconWrap {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
+
+  @include mixins.respond-to-grid(5) {
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: math.percentage(2 / 12);
+  }
+
+  @include mixins.respond-to-grid(8) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.VerticalProgress-linkIcon {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-size: 100%;
+  background-image: linear-gradient(135deg, colors.$color-itvsh-magenta 0%, colors.$color-itvsh-magenta 100%);
+  border-radius: 100%;
+  fill: colors.$color-white;
+  padding: 10px;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    border-radius: inherit;
+    background-image: linear-gradient(135deg, colors.$color-itvsh-blau 0%, colors.$color-itvsh-magenta 100%);
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -1;
+    transition: opacity 0.45s ease;
+  }
+
+  &:hover,
+  .u-linkWrap:hover & {
+    &::before {
+      opacity: 1;
+    }
+  }
+}

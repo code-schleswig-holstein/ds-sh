@@ -1,0 +1,47 @@
+@use "sass:math";
+@use "../abstracts/mixins";
+@use "../abstracts/functions";
+@use "../abstracts/constants";
+@use "../abstracts/colors";
+@use "../abstracts/icons";
+
+.GridCol2MainAside-preline {
+  @include mixins.default-small;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: text-top;
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 2em;
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-dachzeile-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-magenta}">#{icons.$symbol-dachzeile}</g></svg>');
+  }
+}
+
+.GridCol2MainAside-col-aside {
+  @include mixins.margin-bottom(constants.$gutter-width);
+
+  @include mixins.respond-to-grid(6) {
+    @include mixins.margin-right(math.percentage(1 / 12));
+    width: math.percentage(4 / 12);
+  }
+
+  @include mixins.respond-to-grid(8) {
+    width: math.percentage(4 / 12);
+  }
+}
+
+.GridCol2MainAside-col-main {
+  @include mixins.margin-bottom(constants.$gutter-width);
+
+  @include mixins.respond-to-grid(6) {
+    width: math.percentage(7 / 12);
+  }
+
+  @include mixins.respond-to-grid(8) {
+    width: math.percentage(7 / 12);
+  }
+}

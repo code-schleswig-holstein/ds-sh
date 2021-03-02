@@ -1,0 +1,458 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+// styling hints: http://blog.kulturbanause.de/2015/03/formular-styling-mit-css-select-listen-radio-buttons-und-checkboxen-individuell-gestalten/
+
+.Base-form {
+  position: relative;
+  width: 100%;
+  @include mixins.clearfix;
+
+  //display: flex;
+  //flex-wrap: wrap;
+  //flex-direction: row;
+}
+
+// grouping input and label
+.Base-formGroup {
+  margin-bottom: 1.5em;
+
+  padding-left: constants.$gutter-width;
+  padding-right: constants.$gutter-width;
+  width: 100%;
+  float: left;
+
+  //@include grid-col;
+  //width: span(12);
+  //@include span(last 12 of 12);  // float clearfix
+}
+
+// labels
+.Base-label {
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(16px);
+  display: block;
+  color: colors.$color-anthrazit;
+  margin-bottom: 0.5em;
+
+  .mandatory {
+    color: colors.$color-sh-rot;
+    padding-left: 0.25em;
+  }
+
+  .Base-theme--dark & {
+    color: colors.$color-white;
+  }
+}
+
+// input
+.Base-input {
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  //font-weight: $fontweight-Default-regular;
+  width: 100%;
+  color: colors.$color-anthrazit;
+  line-height: 1.25;
+  padding: 0.7em;
+  background-color: colors.$color-white;
+  border: 1px solid colors.$color-sh-blau-10;
+  -webkit-appearance: none;
+  min-height: 2em;
+  overflow: hidden;
+  transition: border-color 0.5s ease;
+  display: block;
+
+  &:focus {
+    border-color: colors.$color-sh-blau;
+  }
+}
+
+.Base-input--error {
+  border: 1px colors.$color-sh-rot solid !important;
+}
+
+// select
+.Base-select-wrap {
+  position: relative;
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    border-bottom: 2px solid colors.$color-sh-blau-60;
+    border-right: 2px solid colors.$color-sh-blau-60;
+    height: 1em;
+    margin: auto;
+    right: 1.25em;
+    transform-origin: center right;
+    transform: scale(1,0.75) rotate(45deg);
+    width: 1em;
+    z-index: 2;
+
+    background-color: transparent;
+  }
+}
+
+
+.Base-select {
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid colors.$color-sh-blau-10;
+  line-height: 1.25;
+  width: 100%;
+  color: colors.$color-anthrazit;
+  padding: 0.7em 55px 0.7em 0.7em;
+  background-color: colors.$color-white;
+  //background-image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="34" height="12"><polyline points="2,2 11,10 20,2" style="stroke:' + $color-auburn + ';stroke-width:2;fill:none" /></svg>');
+  //background-position: center right, bottom right, center right;
+  //background-repeat: no-repeat, no-repeat, no-repeat;
+  transition: border-color 0.5s ease;
+
+  &:focus {
+    border-color: colors.$color-sh-blau;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &[size] {
+    background-image: none;
+  }
+}
+
+.Base-checkbox-group,
+.Base-radio-group {
+  margin-bottom: 1.5em;
+  position: relative;
+  width: 100%;
+}
+
+// form check
+.Base-checkbox {
+  appearance: none;
+  font-size: 1em;
+
+  // better styling only for modern browsers. To identify them, check for pseudoclass (:checked, :not(checked))
+  // hide standard inputs
+  &[type='checkbox']:checked,
+  &[type='checkbox']:not(checked) {
+    @include mixins.visuallyHidden;
+  }
+}
+
+// form radio
+.Base-radio {
+  appearance: none;
+  font-size: 1em;
+
+  // better styling only for modern browsers. To identify them, check for pseudoclass (:checked, :not(checked))
+  // hide standard inputs
+  &[type='radio']:checked,
+  &[type='radio']:not(checked) {
+    @include mixins.visuallyHidden;
+  }
+}
+
+.Base-radio-label,
+.Base-checkbox-label {
+  @include mixins.font-AvenirNextLTPro-Regular;
+  @include mixins.font-size(18px);
+  //font-weight: $fontweight-Default-regular;
+  display: inline-block;
+  color: colors.$color-anthrazit;
+  padding-left: 40px;
+  cursor: pointer;
+  //width: calc(100% - 2.5em);
+
+  .Base-checkbox:disabled + &{
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .mandatory {
+    color: colors.$color-sh-rot;
+    padding-left: 0.25em;
+  }
+}
+
+.Base-radio-label {
+  // radio background not selected
+  .Base-radio[type='radio']:checked + &::before,
+  .Base-radio[type='radio']:not(checked) + &::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    border: 1px solid colors.$color-sh-blau-60;
+    background-color: colors.$color-white;
+    border-radius: 50%;
+    //transition: border-color 0.5s ease;
+  }
+
+  // check buble not checked
+  .Base-radio[type='radio']:checked + &::after,
+  .Base-radio[type='radio']:not(checked) + &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: colors.$color-white;
+    transform: scale(0,0);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  // radio background selected
+  .Base-radio[type='radio']:checked + &::before {
+    //box-shadow: none;
+    //background-color: $color-sh-blau-60;
+    //border-color: $color-sh-blau-60;
+
+    .Base-theme--dark & {
+      //background-color: $color-pk-blue-50;
+      //border-color: $color-pk-blue-50;
+    }
+  }
+
+  // radio bubble checked
+  .Base-radio[type='radio']:checked + &::after {
+    background: colors.$color-sh-blau-60;
+    transform: scale(1,1);
+  }
+
+  .Base-radio[type='radio']:focus + & {
+    outline: 1px dotted colors.$color-sh-blau;
+    outline-offset: 2px;
+  }
+}
+
+
+.Base-checkbox-label {
+
+  // checkbox background not checked
+  .Base-checkbox[type='checkbox']:checked + &::before,
+  .Base-checkbox[type='checkbox']:not(:checked) + &::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background-color: colors.$color-white;
+    color: colors.$color-white;
+    border: 1px solid colors.$color-sh-blau-60;
+    z-index: 0;
+    //transition: border-color 0.5s ease;
+  }
+
+  // checkbox background checked
+  .Base-checkbox[type='checkbox']:checked + &::before {
+    background-color: colors.$color-sh-blau-60;
+  }
+
+  .Base-checkbox[type='checkbox']:checked + &::after,
+  .Base-checkbox[type='checkbox']:not(:checked) + &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 2px solid colors.$color-white;
+    border-bottom: 2px solid colors.$color-white;
+    height: 10px;
+    width: 15px;
+    top: 7px;
+    left: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    transform: rotate(-50deg) scale(0,0);
+  }
+
+  .Base-checkbox[type='checkbox']:checked + &::after {
+    transform: rotate(-50deg) scale(1,1);
+  }
+
+
+  .Base-checkbox[type='checkbox']:focus + & {
+    outline: 1px dotted colors.$color-sh-blau;
+    outline-offset: 2px;
+  }
+}
+
+
+.Base-form-legend {
+  @include mixins.default-h4;
+  margin-bottom: 1em;
+}
+
+
+// Formfield layout variants
+//.Base-formGroup--halfLeft {
+//
+//  @include respond-to(sm) {
+//    width: span(6) !important;
+//    clear: left;
+//  }
+//}
+//
+//.Base-formGroup--oneThirdLeft {
+//  @include respond-to(sm) {
+//    width: span(4) !important;
+//  }
+//}
+//
+//.Base-formGroup--oneQuartLeft {
+//  @include respond-to(sm) {
+//    width: span(3) !important;
+//    clear: left;
+//  }
+//}
+//
+//.Base-formGroup--twoThirdLeft {
+//  @include respond-to(sm) {
+//    width: span(8) !important;
+//  }
+//}
+//
+//.Base-formGroup--threeQuartLeft {
+//  @include respond-to(sm) {
+//    width: span(9) !important;
+//    clear: left;
+//  }
+//}
+//
+//.Base-formGroup--halfRight {
+//  @include respond-to(sm) {
+//    width: span(6) !important;
+//    float: right;
+//  }
+//}
+//
+//.Base-formGroup--oneThirdRight {
+//  @include respond-to(sm) {
+//    width: span(4) !important;
+//    float: right;
+//  }
+//}
+//
+//.Base-formGroup--twoThirdRight {
+//  @include respond-to(sm) {
+//    width: span(8) !important;
+//    float: right;
+//  }
+//}
+//
+//.Base-formGroup--threeQuartRight {
+//  @include respond-to(sm) {
+//    width: span(9) !important;
+//    float: right;
+//  }
+//}
+//
+//.Base-formGroup--oneQuartRight {
+//  @include respond-to(sm) {
+//    width: span(3) !important;
+//    float: right;
+//  }
+//}
+
+.Base-formGroup--nolabel {
+  .Base-label {
+    @include mixins.visuallyHidden;
+  }
+}
+
+// formgroup modifier for inline Radio Buttons and Checkboxes
+.Base-formGroup--inline {
+  .Base-checkbox-group,
+  .Base-radio-group {
+    display: inline-block;
+    margin-right: 2em;
+    width: auto;
+  }
+}
+
+.field-errors,
+.parsley-errors-list,
+.Base-formError {
+  //@include default-p;
+  @include mixins.default-small;
+  color: colors.$color-sh-rot;
+  line-height: 1.25;
+  display: block;
+  //background-color: $color-white;
+  margin-top: 4px;
+}
+
+.Base-formError-list,
+.parsley-errors-list {
+
+  list-style-type: none;
+  padding: 6px 12px;
+
+}
+
+
+// JS Form Validation
+.parsley-errors-list {
+  opacity: 0;
+  display: none;
+  clear: left;
+  padding: 0;
+
+  &.filled {
+    opacity: 1;
+    padding: 6px 12px;
+    display: block;
+  }
+
+}
+
+.Base-formText {
+  @include mixins.default-p;
+  color: colors.$color-anthrazit;
+  //margin-right: 0.5em;
+  //margin-top: 0.5em;
+  //margin-bottom: 0.5em;
+}
+
+.Base-formNotification {
+  @include mixins.default-p;
+  color: colors.$color-anthrazit;
+  display: block;
+
+  margin-top: 2.5em;
+  position: relative;
+  margin-bottom: 2.75em;
+}
+
+.Base-inputGroup--buttonGroup {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  & > * + * {
+    margin-left: 1em;
+  }
+}
+
+.Base-form--default {
+  max-width: functions.col-width(8, true);
+  //margin: 0 auto;
+}

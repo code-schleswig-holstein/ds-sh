@@ -1,0 +1,57 @@
+@use "../abstracts/colors";
+@use "../abstracts/constants";
+@use "../abstracts/functions";
+@use "../abstracts/icons";
+
+.YouTubeVideo {
+  position: relative;
+
+  &::before {
+    content: '';
+    color: colors.$color-white;
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    top: calc(50% - 42px);
+    left: calc(50% - 42px);
+    text-align: center;
+    transition: 0.2s ease;
+    pointer-events: none;
+
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-video-play-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-white}"><rect x="150" y="150" width="200" height="200"></rect></g><g fill="#{colors.$color-sh-rot}">#{icons.$symbol-video-play}</g></svg>');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 84px;
+  }
+}
+
+.YouTubeVideo-layer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(colors.$color-sh-blau-10, 0.8);
+  padding: constants.$gutter-width;
+}
+
+.YouTubeVideo-previewImage {
+  margin-bottom: 0 !important;
+  max-width: none;
+  width: 100%;
+}
+
+.YoutTubeVideo-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: constants.$gutter-width;
+}
+
+.YoutTubeVideo-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

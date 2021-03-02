@@ -1,0 +1,97 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+@use "Base-headline";
+@use "Base-paragraph";
+@use "Base-list";
+
+.cke_editable,
+.cke_panel_list,
+.RTE {
+  h1 {
+    @extend .Base-h1;
+  }
+
+  h2 {
+    @extend .Base-h2;
+  }
+
+  h3 {
+    @extend .Base-h3;
+  }
+
+  h4 {
+    @extend .Base-h4;
+  }
+
+  h5 {
+    @extend .Base-h5;
+  }
+
+  h6 {
+    @extend .Base-h6;
+  }
+
+  p {
+    @extend .Base-p;
+  }
+
+  ul {
+    @extend .Base-ul;
+  }
+
+  ol {
+    @extend .Base-ol;
+  }
+
+  blockquote > p {
+    @include mixins.font-AvenirNextLTPro-Regular;
+    @include mixins.font-size(18px);
+    line-height: 1.25;
+    color: colors.$color-sh-blau;
+
+    position: relative;
+    display: flex;
+    max-width: functions.col-width(6, true);
+    margin: 1em auto 2em;
+
+
+    &::before,
+    &::after {
+      @include mixins.font-AvenirNextLTPro-Demi;
+      @include mixins.font-size(80px);
+      line-height: 1;
+      color: colors.$color-sh-blau-60;
+      position: absolute;
+    }
+
+    &::before {
+      content: "„";
+      left: -0.5em;
+      bottom: 0;
+    }
+
+    &::after {
+      content: "“";
+      right: -0.5em;
+      top: 0;
+    }
+  }
+
+  table {
+    @extend .Base-table !optional;
+  }
+
+  // Modifier classes in RTE
+  .Base-p--small {
+    @extend .Base-p--small !optional;
+  }
+
+  .Base-p--large {
+    @extend .Base-p--large !optional;
+  }
+
+  .Base-ul--check {
+    @extend .Base-ul--check !optional;
+  }
+}
