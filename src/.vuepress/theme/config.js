@@ -59,6 +59,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    title: 'ITVSH Design System Dokumentation',
     logo: '/img/logo.svg',
     repoLabel: 'Gitlab',
     repo: 'https://gitlab.nc-lab.de/nc/Design-System-Doku',
@@ -67,19 +68,13 @@ module.exports = {
     editLinkText: 'Hilf uns diese Seite zu verbessern!',
     lastUpdated: true,
     searchPlaceholder: 'Suche',
+    search: true,
     smoothScroll: true,
     navbar: false,
-    sidebar: {
-      '/guide/': [
-        {
-          title: 'Guide',
-          collapsable: false,
-          children: [
-            '',
-            'using-vue',
-          ]
-        }
-      ],
-    }
+    displayAllHeaders: true,
+    sidebar: [
+      '/',
+      '/introduction',
+    ]
   }
 }

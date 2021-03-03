@@ -88,17 +88,42 @@
 .SectionHeader-backLink {
   margin-left: auto;
 
-  &::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: 0.8em;
-    height: 0.8em;
-    margin-top: -0.2em;
-    margin-left: 0.5em;
-    background-repeat: no-repeat;
-    background-size: 0.8em;
-    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-section}</g></svg>');
+  & .Base-link {
+    display: inline-flex;
+    align-items: center;
+  }
+}
 
+.SectionHeader-backLink-text {
+  display: none;
+
+  @include mixins.respond-to(constants.$mobile-break) {
+    @include mixins.font-AvenirNextLTPro-Demi;
+    color: colors.$color-sh-blau;
+    display: block;
+  }
+}
+
+.SectionHeader-backLink-icon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  background-color: colors.$color-itvsh-magenta;
+  border-radius: 5px 50% 50% 5px;
+  @include mixins.padding(5px);
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+  transition: transform 0.2s ease;
+
+
+  & svg {
+    fill: colors.$color-white;
+    will-change: auto;
+  }
+
+  &:hover,
+  .u-linkWrap:hover & {
+    transform: translateX(constants.$nudge);
   }
 }

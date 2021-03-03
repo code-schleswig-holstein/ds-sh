@@ -6,6 +6,7 @@
   position: relative;
   z-index: functions.z(constants.$z-main, main);
   padding-top: constants.$header-height-mobile;
+  margin-top: constants.$gutter-width*2;
 
   @include mixins.respond-to(constants.$mobile-break) {
     padding-top: constants.$header-height-desktop;

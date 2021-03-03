@@ -12,9 +12,14 @@
           <img class="SectionHeader-logo SectionHeader-logo--small" :src="$withBase('img/logo-sm.svg')" alt="ITVSH Design System" width="49" height="40"/>
         </a>
         <p class="Base-h1 u-textTransform--upper">Dokumentation</p>
-        <div class="SectionHeader-backLink">
-          <a href="https://www.design-system.sh/" class="Base-link">
-            zum <span class="u-textTransform--upper">Digital Design System</span>
+        <div class="SectionHeader-backLink u-linkWrap">
+          <a href="https://www.design-system.sh/" class="Base-link" title="Zur Design System Informations Webseite">
+            <span class="SectionHeader-backLink-text">zum <span class="u-textTransform--upper">&nbsp;Digital Design System</span></span>
+            <span class="SectionHeader-backLink-icon">
+              <svg class="u-scalingInlineSVG" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 512 512" preserveAspectRatio="xMidYMin slice" style="padding-bottom: 100%;">
+                <path d="M290.132 34l-34.06 34.06 163.722 163.72H0v48.175h419.794L256.072 443.677l34.06 34.06L512 255.868z"/>
+              </svg>
+            </span>
           </a>
         </div>
       </div>
