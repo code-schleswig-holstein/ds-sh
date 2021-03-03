@@ -32,10 +32,6 @@ module.exports = {
       '@vuepress/plugin-medium-zoom',
       '@vuepress/plugin-last-updated',
       '@vuepress/pwa',
-      {
-        serviceWorker: true,
-        updatePopup: true
-      }
     ]
   ],
   module: {
@@ -63,25 +59,16 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '/assets/img/logo.svg',
+    logo: '/img/logo.svg',
     repoLabel: 'Gitlab',
-    repo: 'git@gitlab.nc-lab.de:nc/Design-System-Doku.git',
+    repo: 'https://gitlab.nc-lab.de/nc/Design-System-Doku',
     editLinks: true,
     docsBranch: 'main',
     editLinkText: 'Hilf uns diese Seite zu verbessern!',
     lastUpdated: true,
     searchPlaceholder: 'Suche',
     smoothScroll: true,
-    nav: [
-      {
-        text: 'Guide',
-        link: '/guide/',
-      },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
-      }
-    ],
+    navbar: false,
     sidebar: {
       '/guide/': [
         {

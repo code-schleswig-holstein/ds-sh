@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "constants";
-@use "./node_modules/rfs/scss" as rfs with (
+@use "../../../../../../node_modules/rfs/scss" as rfs with (
   $rfs-factor: constants.$rfs-factor,
   $rfs-breakpoint: constants.$rfs-breakpoint
 );

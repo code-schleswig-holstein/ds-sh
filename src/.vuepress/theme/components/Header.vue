@@ -11,8 +11,11 @@
         <a href="#" class="SectionHeader-logoSection" tabindex="-1">
           <img class="SectionHeader-logo SectionHeader-logo--small" :src="$withBase('img/logo-sm.svg')" alt="ITVSH Design System" width="49" height="40"/>
         </a>
-        <div id="headermainmenu" class="SectionHeader-menuPanel">
-          zum Digital DEsign System
+        <p class="Base-h1 u-textTransform--upper">Dokumentation</p>
+        <div class="SectionHeader-backLink">
+          <a href="https://www.design-system.sh/" class="Base-link">
+            zum <span class="u-textTransform--upper">Digital Design System</span>
+          </a>
         </div>
       </div>
     </div>

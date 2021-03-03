@@ -24,6 +24,7 @@
 @use "base/u-stack";
 @use "base/u-svg";
 @use "base/u-textAlign";
+@use "base/u-textTransform";
 @use "base/u-visuallyHidden";
 @use "base/u-wordBreak";
 @use "base/normalize";
@@ -44,15 +45,10 @@
 @use "themes/FluidStyledContent";
 
 //Layout
-@use "layout/CookieBar";
-@use "layout/MainNavigation";
 @use "layout/FooterNavigation";
-@use "layout/ScrollTop";
 @use "layout/SectionFooter";
 @use "layout/SectionHeader";
 @use "layout/SectionMain";
-@use "layout/SkipNavigation";
-@use "layout/SearchBar";
 
 // components
 @use "components/Copyrights";

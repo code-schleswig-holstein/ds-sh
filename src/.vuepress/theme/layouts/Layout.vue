@@ -1,13 +1,14 @@
 <template>
-<Content/>
+  <div class="theme-container">
+    <slot class="theme-content" />
+    <PageEdit />
+  </div>
 </template>
-
 <script>
+import PageEdit from "@theme/components/PageEdit";
 export default {
-  name: "Layout"
+  components: {
+    PageEdit
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

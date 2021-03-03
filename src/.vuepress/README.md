@@ -1,7 +1,6 @@
 ---
+home: false
 tagline: Dokumentation zum Design System des ITVSH
-actionText: Quick Start →
-actionLink: /guide/
 features:
 - title: Feature 1 Title
   details: Feature 1 Description

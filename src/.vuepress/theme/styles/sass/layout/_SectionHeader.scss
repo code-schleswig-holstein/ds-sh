@@ -1,5 +1,6 @@
 @use "../abstracts/colors";
 @use "../abstracts/constants";
+@use "../abstracts/icons";
 @use "../abstracts/functions";
 @use "../abstracts/mixins";
 
@@ -41,28 +42,24 @@
 
   @include mixins.respond-to(constants.$mobile-break) {
     display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
 
 .SectionHeader-logoSection {
-  margin-right: constants.$gutter-width;
-  width: 50px;
-
   & .SectionHeader-logo--large {
     display: none;
   }
 
   & .SectionHeader-logo--small {
     display: block;
+    width: 49px;
+    margin-right: constants.$gutter-width;
   }
 
   @include mixins.respond-to(constants.$mobile-break) {
-    width: auto;
-
     & .SectionHeader-logo--large {
       display: block;
+      width: 170px;
     }
 
     & .SectionHeader-logo--small {
@@ -75,50 +72,9 @@
 .SectionHeader-menuSection {
   display: flex;
   align-items: center;
-  align-content: center;
+  justify-content: flex-start;
   width: 100%;
   margin-left: 0;
-}
-
-.SectionHeader-menuPanel {
-  visibility: hidden;
-  background-color: colors.$color-white;
-  position: absolute;
-  top: constants.$header-height-mobile;
-  left: 0;
-  display: block;
-  opacity: 0;
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  margin-left: calc(-#{constants.$outer-pad}vw - #{constants.$gutter-width});
-  margin-right: calc(-#{constants.$outer-pad}vw - #{constants.$gutter-width});
-  width: 100vw;
-
-  &.is-open {
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    overflow-y: auto;
-    visibility: visible;
-    opacity: 1;
-    //transform: translateX(0);
-  }
-
-  @include mixins.respond-to(constants.$mobile-break) {
-    visibility: visible;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-color: transparent;
-    position: static;
-    top: auto;
-    right: auto;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    height: auto !important;
-    overflow-y: inherit !important;
-    opacity: 1;
-    transform: none;
-    box-shadow: none;
-  }
 }
 
 .SectionHeader-hamburgerSection {
@@ -126,5 +82,23 @@
 
   @include mixins.respond-to(constants.$mobile-break) {
     display: none;
+  }
+}
+
+.SectionHeader-backLink {
+  margin-left: auto;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.8em;
+    height: 0.8em;
+    margin-top: -0.2em;
+    margin-left: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 0.8em;
+    background-image: functions.svg-url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="#{icons.$symbol-link-section-viewbox}" preserveAspectRatio="xMidYMin slice" ><g fill="#{colors.$color-itvsh-blau}">#{icons.$symbol-link-section}</g></svg>');
+
   }
 }

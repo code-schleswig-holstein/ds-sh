@@ -12,8 +12,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "lint": "eslint --ext .js,.vue",
-    "serve": "vuepress serve docs"
+    "lint": "eslint --ext .js,.vue"
   },
   "license": "MIT",
   "dependencies": {
@@ -24,22 +23,23 @@
     "vuepress-plugin-smooth-scroll": "^0.0.10"
   },
   "devDependencies": {
+    "@vuepress/plugin-search": "^1.8.2",
+    "babel-eslint": "^10.1.0",
     "css-loader": "^4.3.0",
     "dart-sass": "^1.25.0",
-    "postcss-loader": "^4.2.0",
-    "rfs": "^9.0.3",
-    "sass": "^1.32.8",
-    "sass-loader": "10.1.1",
-    "style-loader": "^2.0.0",
-    "vuepress": "^1.8.2",
-    "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
+    "postcss-loader": "^4.2.0",
+    "rfs": "^9.0.3",
+    "sass": "^1.32.8",
+    "sass-loader": "10.1.1",
+    "style-loader": "^2.0.0",
     "stylint": "^2.0.0",
-    "vue-eslint-parser": "^7.6.0"
+    "vue-eslint-parser": "^7.6.0",
+    "vuepress": "^1.8.2"
   }
 }
