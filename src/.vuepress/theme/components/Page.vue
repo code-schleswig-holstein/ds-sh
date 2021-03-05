@@ -7,7 +7,7 @@
   </main>
 </template>
 <script>
-import PageEdit from "@parent-theme/components/PageEdit";
+import PageEdit from "@theme/components/PageEdit";
 export default {
   components: {
     PageEdit

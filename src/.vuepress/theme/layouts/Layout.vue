@@ -6,6 +6,7 @@
         <div class="GridCol2MainAside-row u-row">
           <div class="GridCol2MainAside-col-aside u-col u-stack--2">
             <SearchBox/>
+            <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
             <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
               <template #top>
                 <slot name="sidebar-top"/>
@@ -34,9 +35,10 @@
   </div>
 </template>
 <script>
-import Home from "@parent-theme/components/Home";
+import Home from "@theme/components/Home";
 import Page from "@theme/components/Page";
 import SearchBox from '@SearchBox'
+import Navbar from '@parent-theme/components/Navbar';
 import Sidebar from '@parent-theme/components/Sidebar';
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
@@ -44,6 +46,7 @@ export default {
     Page,
     SearchBox,
     Sidebar,
+    Navbar,
     Home
   },
   data () {

@@ -34,16 +34,19 @@ forem id cruori super, inpune ascendere et silet datis. Sua flebile: sub
 vertitur Marsya, unda quos etiam sermonibus inpositus ossa animalia easdem matri
 gestumque ictibus contribuere Caystro.
 
-``` html
-<ul>
-  <li
-    v-for="todo in todos"
-    :key="todo.id"
-  >
-    {{ todo.text }}
-  </li>
-</ul>
+<code-group>
+<code-block title="YARN">
+```bash
+yarn create vuepress-site [optionalDirectoryName]
 ```
+</code-block>
+
+<code-block title="NPM" active>
+```bash
+npx create-vuepress-site [optionalDirectoryName]
+```
+</code-block>
+</code-group>
 
 ## Vult vestigia templa
 

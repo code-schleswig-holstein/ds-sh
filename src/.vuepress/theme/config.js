@@ -1,4 +1,5 @@
 const {description} = require('../../../package.json')
+import localization from 'moment/locale/de'
 
 module.exports = {
   /**
@@ -26,29 +27,6 @@ module.exports = {
     ['meta', {name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png'}],
     ['meta', {name: 'msapplication-TileColor', content: '#000000'}]
   ],
-  plugins: [
-    [
-      '@vuepress/plugin-back-to-top',
-      '@vuepress/plugin-medium-zoom',
-      ['@vuepress/pwa', {
-        serviceWorker: true,
-        popupComponent: 'MySWUpdatePopup',
-        updatePopup: {
-          message: "Neue Inhalte sind verfügbar.",
-          buttonText: "Aktualisieren"
-        }
-      }],
-      ['@vuepress/search', {
-        searchMaxSuggestions: 10
-      }],
-      '@vuepress/last-updated',
-      {
-        dateOptions: {
-          hour12: true
-        }
-      }
-    ]
-  ],
   module: {
     rules: [
       {
@@ -67,7 +45,37 @@ module.exports = {
       },
     ],
   },
-
+  locales: {
+    // The key is the path for the locale to be nested under.
+    // As a special case, the default locale can use '/' as its path.
+    '/': {
+      lang: 'de-DE', // this will be set as the lang attribute on <html>
+      title: 'ITVSH Design System Dokumentation',
+      description: description
+    }
+  },
+  plugins: [
+    '@vuepress/plugin-back-to-top',
+    '@vuepress/plugin-medium-zoom',
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      popupComponent: 'SWUpdatePopup',
+      updatePopup: {
+        message: "Neue Inhalte sind verfügbar.",
+        buttonText: "Aktualisieren"
+      }
+    }],
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10
+    }],
+    '@vuepress/last-updated',
+    {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        return moment(timestamp)
+      }
+    }
+  ],
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
    *
@@ -81,13 +89,17 @@ module.exports = {
     editLinks: true,
     docsBranch: 'main',
     editLinkText: 'Hilf uns diese Seite zu verbessern!',
-    lastUpdated: true,
+    lastUpdated: 'Letzte Änderungen',
     searchPlaceholder: 'Suche',
     search: true,
     smoothScroll: true,
-    navbar: false,
+    navbar: true,
     displayAllHeaders: true,
-
+    nav: [
+      { text: 'Startseite', link: '/' },
+      { text: 'Initialisierung', link: '/introduction/' },
+      { text: 'Komponenten', link: 'https://google.com' }
+    ],
     sidebar: [
       '/',
       {
