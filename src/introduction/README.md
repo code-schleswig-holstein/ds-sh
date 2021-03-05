@@ -1,6 +1,5 @@
 ---
-home: false
-sidebar: auto
+sidebarDepth: 0
 tagline: Dokumentation zum Design System des ITVSH
 ---
 # Et adversa evincitque erat stabat damnavit gerens

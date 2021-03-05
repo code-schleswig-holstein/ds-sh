@@ -3,10 +3,9 @@
     <div class="u-container">
       <div class="u-limitWidth-12 u-align-center">
 
-        <div class="GridCol2MainAside-row u-row">
+        <div class="GridCol2MainAside-row u-row" v-if="!$page.frontmatter.home">
           <div class="GridCol2MainAside-col-aside u-col u-stack--2">
             <SearchBox/>
-            <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
             <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
               <template #top>
                 <slot name="sidebar-top"/>
@@ -18,8 +17,7 @@
           </div>
           <div class="GridCol2MainAside-col-main u-col u-stack--2">
             <slot class="theme-content"/>
-            <Home v-if="$page.frontmatter.home" />
-            <Page v-else :sidebar-items="sidebarItems">
+            <Page v-if="!$page.frontmatter.home" :sidebar-items="sidebarItems">
               <template #top>
                 <slot name="page-top" />
               </template>
@@ -29,7 +27,7 @@
             </Page>
           </div>
         </div>
-
+        <Home v-if="$page.frontmatter.home" />
       </div>
     </div>
   </div>
@@ -38,15 +36,13 @@
 import Home from "@theme/components/Home";
 import Page from "@theme/components/Page";
 import SearchBox from '@SearchBox'
-import Navbar from '@parent-theme/components/Navbar';
-import Sidebar from '@parent-theme/components/Sidebar';
+import Sidebar from '@theme/components/Sidebar';
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
   components: {
     Page,
     SearchBox,
     Sidebar,
-    Navbar,
     Home
   },
   data () {

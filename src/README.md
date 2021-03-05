@@ -3,7 +3,7 @@ home: true
 heroText: Dokumentation Design System SH
 tagline: Dokumentation zum Design System des ITVSH
 actionText: Zu den Komponenten
-actionLink: /Komponenten/
+actionLink: /components/
 features:
 - title: Feature 1 Title
   details: Feature 1 Description

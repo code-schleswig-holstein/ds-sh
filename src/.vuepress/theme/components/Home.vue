@@ -1,5 +1,5 @@
 <template>
-  <main class="home" :aria-labelledby="data.heroText !== null ? 'main-title' : null">
+  <section class="home" :aria-labelledby="data.heroText !== null ? 'main-title' : null">
     <header class="hero">
       <h1 v-if="data.heroText !== null" id="main-title" class="Base-h1">
         {{ data.heroText || $title || 'Hello' }}
@@ -26,7 +26,7 @@
     <div v-if="data.footer" class="footer">
       {{ data.footer }}
     </div>
-  </main>
+  </section>
 </template>
 
 <script>

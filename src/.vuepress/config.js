@@ -1,6 +1,4 @@
-const {description} = require('../../../package.json')
-import localization from 'moment/locale/de'
-
+const {description} = require('../../package.json')
 module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -10,7 +8,7 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: description,
-
+  theme: "nc-provider",
   /**
    * Extra tags to be injected to the page HTML `<head>`
    *
@@ -68,13 +66,10 @@ module.exports = {
     ['@vuepress/search', {
       searchMaxSuggestions: 10
     }],
-    '@vuepress/last-updated',
-    {
-      transformer: (timestamp, lang) => {
-        const moment = require('moment')
-        return moment(timestamp)
-      }
-    }
+    ['@vuepress/last-updated',
+      {
+        transformer: timestamp => timestamp
+      }]
   ],
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
@@ -83,33 +78,32 @@ module.exports = {
    */
   themeConfig: {
     title: 'ITVSH Design System Dokumentation',
-    logo: '/img/logo.svg',
     repoLabel: 'Gitlab',
     repo: 'https://gitlab.nc-lab.de/nc/Design-System-Doku',
     editLinks: true,
-    docsBranch: 'main',
     editLinkText: 'Hilf uns diese Seite zu verbessern!',
-    lastUpdated: 'Letzte Änderungen',
-    searchPlaceholder: 'Suche',
+    docsBranch: 'main',
+    docsDir:'src',
+    lastUpdated: 'Letze Änderungen',
+    searchPlaceholder: 'Suche...',
     search: true,
     smoothScroll: true,
-    navbar: true,
+    navbar: false,
     displayAllHeaders: true,
-    nav: [
-      { text: 'Startseite', link: '/' },
-      { text: 'Initialisierung', link: '/introduction/' },
-      { text: 'Komponenten', link: 'https://google.com' }
-    ],
     sidebar: [
-      '/',
       {
         title: 'Introduction',
         collapsable: false,
         children: [
-          ['/introduction/', 'Kapitel 1'],
-          ['/introduction/Backend', 'Backend'],
+          ['/introduction/', 'Initialisierung'],
         ]
       },
+      {
+        title: 'Komponenten',
+        collapsable: false,
+        children: [
+          ['/components/', 'Komponenten'],
+        ]}
     ]
   }
 }

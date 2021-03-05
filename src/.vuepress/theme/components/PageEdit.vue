@@ -7,7 +7,7 @@
 
     <div v-if="lastUpdated" class="last-updated">
       <span class="prefix">{{ lastUpdatedText }}:</span>
-      <span class="time">{{ lastUpdated }}</span>
+      <span class="time">{{ lastUpdated }} Uhr</span>
     </div>
   </footer>
 </template>
@@ -15,13 +15,14 @@
 <script>
 import isNil from 'lodash/isNil'
 import { endingSlashRE, outboundRE } from '@parent-theme/util'
+import moment from 'moment'
+import localization from 'moment/locale/de'
 export default {
   name: 'PageEdit',
 
   computed: {
     lastUpdated () {
-      console.log(this.$page.lastUpdated)
-      return this.$page.lastUpdated
+      return this.$page.lastUpdated  && moment(this.$page.lastUpdated).locale("de", localization).format('DD. MMMM yyyy, h:mm')
     },
 
     lastUpdatedText () {
@@ -31,7 +32,7 @@ export default {
       if (typeof this.$site.themeConfig.lastUpdated === 'string') {
         return this.$site.themeConfig.lastUpdated
       }
-      return 'Letzte Änderung'
+      return 'Last Updated'
     },
 
     editLink () {
@@ -109,3 +110,4 @@ export default {
   }
 }
 </script>
+
