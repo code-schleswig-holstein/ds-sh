@@ -2,16 +2,18 @@
   <header id="header" class="SectionHeader-container u-container u-print-hide">
     <div class="SectionHeader u-limitWidth-12 u-align-center">
       <div class="SectionHeader-metaSection ">
-        <a href="#" class="SectionHeader-logoSection">
-          <img class="SectionHeader-logo SectionHeader-logo--large" :src="$withBase('img/logo-lg.svg')" alt="ITVSH Design System" width="437" height="40"/>
-        </a>
+        <div href="/" class="SectionHeader-logoSection">
+          <img class="SectionHeader-logo SectionHeader-logo--large" :src="$withBase('/img/logo-lg.svg')" alt="ITVSH Design System" width="437" height="40"/>
+        </div>
       </div>
 
       <div class="SectionHeader-menuSection" id="primarynavigation" aria-label="Primär">
-        <a href="#" class="SectionHeader-logoSection" tabindex="-1">
-          <img class="SectionHeader-logo SectionHeader-logo--small" :src="$withBase('img/logo-sm.svg')" alt="ITVSH Design System" width="49" height="40"/>
+        <a href="/" class="SectionHeader-logoSection" tabindex="-1">
+          <img class="SectionHeader-logo SectionHeader-logo--small" :src="$withBase('/img/logo-sm.svg')" alt="ITVSH Design System" width="49" height="40"/>
         </a>
-        <p class="Base-h1 u-textTransform--upper">Dokumentation</p>
+        <a href="/">
+          <p class="Base-h1 u-textTransform--upper">Dokumentation</p>
+        </a>
         <div class="SectionHeader-backLink u-linkWrap">
           <a href="https://www.design-system.sh/" class="Base-link" title="Zur Design System Informations Webseite">
             <span class="SectionHeader-backLink-text">zum <span class="u-textTransform--upper">&nbsp;Digital Design System</span></span>

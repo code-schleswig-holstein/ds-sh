@@ -1,5 +1,6 @@
 ---
 home: true
+sidebar: true
 tagline: Dokumentation zum Design System des ITVSH
 features:
 - title: Feature 1 Title

@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-container">
+  <div class="theme-container" :class="pageClasses" @touchstart="onTouchStart" @touchend="onTouchEnd">
     <div class="u-container">
       <div class="u-limitWidth-12 u-align-center">
 
@@ -16,7 +16,7 @@
             </Sidebar>
           </div>
           <div class="GridCol2MainAside-col-main u-col u-stack--2">
-            <Content class="theme-content"/>
+            <slot class="theme-content"/>
             <Home v-if="$page.frontmatter.home" />
             <Page v-else :sidebar-items="sidebarItems">
               <template #top>
@@ -28,14 +28,12 @@
             </Page>
           </div>
         </div>
-        <PageEdit />
 
       </div>
     </div>
   </div>
 </template>
 <script>
-import PageEdit from "@parent-theme/components/PageEdit";
 import Home from "@parent-theme/components/Home";
 import Page from "@theme/components/Page";
 import SearchBox from '@SearchBox'
@@ -43,7 +41,6 @@ import Sidebar from '@parent-theme/components/Sidebar';
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
   components: {
-    PageEdit,
     Page,
     SearchBox,
     Sidebar,

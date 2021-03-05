@@ -1,5 +1,6 @@
 ---
 home: false
+sidebar: auto
 tagline: Dokumentation zum Design System des ITVSH
 ---
 # Et adversa evincitque erat stabat damnavit gerens
@@ -34,14 +35,16 @@ forem id cruori super, inpune ascendere et silet datis. Sua flebile: sub
 vertitur Marsya, unda quos etiam sermonibus inpositus ossa animalia easdem matri
 gestumque ictibus contribuere Caystro.
 
-    var mpAddressRuntime = drop_media - exbibyte;
-    var tiger_cookie_camera = copyright_localhost.lteScroll(syn_vpi_terminal);
-    var sharewareWeb = pageNanometer(management.storage(program_barcraft_hot) +
-            qbe, copy_ascii, bluetooth(uri, dimmBig, adf_remote) * itLogin);
-    var handleYahooRate = 4 / cycleConfiguration;
-    dock_array(definition,
-            minicomputerMultimediaSkyscraper.thirdDitheringUgc.formulaWddm(-3),
-            officeVirtualization);
+``` html
+<ul>
+  <li
+    v-for="todo in todos"
+    :key="todo.id"
+  >
+    {{ todo.text }}
+  </li>
+</ul>
+```
 
 ## Vult vestigia templa
 

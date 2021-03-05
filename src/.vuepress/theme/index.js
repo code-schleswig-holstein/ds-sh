@@ -8,6 +8,12 @@ module.exports = {
     }],
     ['@vuepress/search', {
       searchMaxSuggestions: 10
-    }]
+    }],
+    '@vuepress/last-updated',
+    {
+      dateOptions:{
+        hour12: true
+      }
+    }
   ]
 }
