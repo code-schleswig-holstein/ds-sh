@@ -41,6 +41,8 @@
     "stylint": "^2.0.0",
     "vue-eslint-parser": "^7.6.0",
     "vue-moment": "^4.1.0",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-seo": "^0.1.4"
   }
 }

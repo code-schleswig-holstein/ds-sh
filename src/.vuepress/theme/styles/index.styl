@@ -4,6 +4,50 @@
  * ref：https://v1.vuepress.vuejs.org/config/#index-styl
  */
 
+h1 {
+  position: relative;
+  display: block;
+  color: $color-sh-blau;
+  font-size: 40px;
+
+  & em {
+    color: $color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: $color-white;
+  }
+}
+
+h2 {
+  font-size 32px;
+  padding-bottom: unset;
+  border-bottom none;
+
+  color: $color-sh-blau;
+
+  & em {
+    color: $color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color:$color-white;
+  }
+}
+
+h3 {
+  font-size 28px;
+  color: $color-sh-blau;
+
+  & em {
+    color: $color-itvsh-magenta;
+  }
+
+  .Base-theme--dark & {
+    color: $color-white;
+  }
+}
+
 .sidebar {
   position: relative;
   background-color: transparent;
@@ -14,6 +58,21 @@
   bottom: unset;
   border-right: none;
   overflow-y: auto;
+}
+
+@media (max-width: $MQMobile) {
+  .sidebar {
+    transform translateX(0);
+  }
+  .search-box input {
+    left: 0;
+    width: 100%;
+  }
+
+  .search-box input:focus {
+    left: 0;
+    width: 100%;
+  }
 }
 
 .sidebar-heading {
@@ -38,4 +97,15 @@
 // CodeBlocks
 .theme-code-group__nav {
   margin-bottom: -25px !important;
+}
+
+/// Overrides of demo code Blocks
+
+.vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__footer:hover svg {
+  fill: $color-itvsh-blau !important;
+}
+
+.vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__footer:hover .vuepress-plugin-demo-block__expand::before {
+  border-top-color: $color-itvsh-blau !important;
+  border-bottom-color: $color-itvsh-blau !important;
 }

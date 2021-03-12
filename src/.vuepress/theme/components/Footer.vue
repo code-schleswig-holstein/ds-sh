@@ -17,7 +17,6 @@
           </div>
           <div class="SectionFooter-colMiddle u-col u-marginBottom--r2">
             <img class="SectionFooter-logo u-marginBottom--r2" :src="$withBase('/img/sh-logo.svg')" alt="Logo: Schleswig Holstein - Ministerium für Energiewende, Landwirtschaft, Umwelt, Natur und Digitalisierung" />
-
           </div>
           <div class="SectionFooter-colRight u-col u-stack--1 u-marginBottom--r2">
             <div class="Copyrights u-marginBottom--r2">
