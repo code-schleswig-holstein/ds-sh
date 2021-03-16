@@ -1,6 +1,6 @@
 ---
-title: Verlinkungen
-tagline: Links
+title: Buttons
+tagline: Buttons
 ---
 # Verlinkungen
 

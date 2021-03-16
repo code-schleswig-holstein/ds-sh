@@ -136,10 +136,10 @@ module.exports = {
 		search: true,
 		smoothScroll: true,
 		navbar: false,
-		displayAllHeaders: false,
+		displayAllHeaders: true,
 		sidebar: {
-			'/components/': ['', 'links'],
+			'/components/': ['', 'links', 'buttons', 'grids'],
 		},
-		sidebarDepth: 0,
+		sidebarDepth: 2,
 	},
 };

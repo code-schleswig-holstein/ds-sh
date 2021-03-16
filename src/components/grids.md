@@ -1,6 +1,6 @@
 ---
-title: Verlinkungen
-tagline: Links
+title: Grid Elemente
+tagline: Grid Elemente
 ---
 # Verlinkungen
 
