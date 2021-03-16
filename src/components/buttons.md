@@ -2,7 +2,7 @@
 title: Buttons
 tagline: Buttons
 ---
-# Verlinkungen
+# Buttons
 
 ## Wann soll diese *Komponente* verwendet werden.
 
@@ -18,26 +18,77 @@ Lorem markdownum acernae: rorat et fessa spesque stivave sustinuere feres
 convertit has Iovem corpora patulosque frons viribus, criminis. Tempore sit in
 solito. Animum iras, intremuere ficto servat nec Pergama tot sit.
 
-::: demo
+::: demo [vanilla]
 ```html
-<template>
-  <div class="box-vue">
-    <button @click="plus">+</button>
-    <button @click="minus">-</button>
-    {{ number }}
-  </div>
-</template>
-<script>
-  export default {
-    data: () => ({ number: 0 }),
-    methods: {
-      plus () { this.number++ },
-      minus () { this.number-- }
+<html>
+<div id="vanilla-box"></div>
+<div class="Base-theme--light u-marginBottom--1">
+  <h5 class="Base-h5">Theme: Light</h5>
+  <button class="Base-button" title="Das ist ein button" type="button">Das ist ein button</button>
+  <button class="Base-button" title="Das ist ein button" type="button" disabled>Disabled button</button>
+  <button class="Base-button" title="Das ist ein button" type="button">Das ist ein button mit sehr viel Text, damit  dieser umbricht.</button>
+</div>
+<div class="Base-theme--dark u-background--sh-blau">
+  <h5 class="Base-h5">Theme: Dark</h5>
+  <button class="Base-button" title="Das ist ein button" type="button">Das ist ein button</button>
+  <button class="Base-button" title="Das ist ein button" type="button" disabled>Disabled button</button>
+  <button class="Base-button" title="Das ist ein button" type="button">Das ist ein button mit sehr viel Text, damit  dieser umbricht.</button>
+
+</div>
+</html>
+<style lang="scss">
+  $fontColor: #ffffff;
+  $activeColor: #D4004B;
+  $bgColor: #E5EAEF;
+  $bgColor--dark: #003064;
+  
+  .Base-button {
+    font-family: serif;
+    font-size: 18px;
+
+    cursor: pointer;
+    color: $fontColor;
+    padding: 0.7em 1.25em 0.75em;
+    align-self: baseline;
+    display: inline-flex;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    border: none;
+    line-height: 1.25;
+    background-color: $bgColor;
+    justify-content: center;
+
+      &:focus,
+      &:hover,
+       .u-linkWrap:hover &,
+      .u-linkWrap.is-active &,
+      .u-linkWrap:active &,
+      &.is-active,
+      &:active {
+         color: $fontColor;
+         background-color: $activeColor;
+       }
+
+      &:disabled {
+         cursor: default;
+         opacity: 0.4;
+         pointer-events: none;
+       }
+
+      .Base-theme--dark & {
+        background-color: $bgColor--dark;
+    
+      &:focus,
+      &:hover,
+       .u-linkWrap:hover &,
+      .u-linkWrap.is-active &,
+      .u-linkWrap:active &,
+      &.is-active,
+      &:active {
+         color: $fontColor;
+         background-color: $activeColor;
+       }
     }
   }
-</script>
-<style>
-  .box-vue { color: red; }
 </style>
 ```
 :::

@@ -28,6 +28,7 @@ module.exports = {
 		],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
 		['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+		['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
 	],
 	module: {
 		rules: [
@@ -136,7 +137,7 @@ module.exports = {
 		search: true,
 		smoothScroll: true,
 		navbar: false,
-		displayAllHeaders: true,
+		displayAllHeaders: false,
 		sidebar: {
 			'/components/': ['', 'links', 'buttons', 'grids'],
 		},
