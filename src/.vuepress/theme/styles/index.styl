@@ -4,6 +4,20 @@
  * ref：https://v1.vuepress.vuejs.org/config/#index-styl
  */
 
+body {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url('/fonts/AvenirNextLTProRegular/font.woff2') format('woff2'), url('/fonts/AvenirNextLTProRegular/font.woff') format('woff');
+  font-display: swap;
+
+  font-size 18px
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url('/fonts/AvenirNextLTProDemi/font.woff2') format('woff2'), url('/fonts/AvenirNextLTProDemi/font.woff') format('woff');
+  font-display: swap;
+}
+
 h1 {
   position: relative;
   display: block;
@@ -100,6 +114,10 @@ h3 {
 }
 
 /// Overrides of demo code Blocks
+
+.vuepress-plugin-demo-block__wrapper {
+  margin-bottom: 2em;
+}
 
 .vuepress-plugin-demo-block__wrapper .vuepress-plugin-demo-block__footer:hover svg {
   fill: $color-itvsh-blau !important;

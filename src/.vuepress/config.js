@@ -139,7 +139,7 @@ module.exports = {
 		navbar: false,
 		displayAllHeaders: false,
 		sidebar: {
-			'/components/': ['', 'links', 'buttons', 'grids'],
+			'/components/': ['', 'links', 'buttons', 'text-styles'],
 		},
 		sidebarDepth: 2,
 	},
