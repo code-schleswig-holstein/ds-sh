@@ -1,4 +1,5 @@
 ---
+sidebarDepth: 0
 title: Komponenten
 tagline: Dokumentation zum Design System des ITVSH
 ---

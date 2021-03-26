@@ -15,8 +15,8 @@ module.exports = {
 	 * ref：https://v1.vuepress.vuejs.org/config/#head
 	 */
 	head: [
-		['link', { rel: 'icon', href: '/logo.png' }],
-		['link', { rel: 'manifest', href: '/manifest.json' }],
+		['link', { rel: 'icon', href: '/img/logo.png' }],
+		['link', { rel: 'manifest', href: '/manifest.json', crossOrigin: 'use-credentials' }],
 		['meta', { name: 'theme-color', content: '#3A78B8' }],
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
 		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
@@ -138,9 +138,36 @@ module.exports = {
 		smoothScroll: true,
 		navbar: false,
 		displayAllHeaders: false,
-		sidebar: {
-			'/components/': ['', 'links', 'buttons', 'text-styles'],
-		},
-		sidebarDepth: 2,
+		sidebar: [
+			{
+				title: 'Komponenten',
+				collapsable: false,
+				children: [
+					{
+						title: 'Einstieg',
+						path: '/components/',
+					},
+					'components/links',
+					'components/buttons',
+					'components/text-styles',
+				],
+			},
+			{
+				title: 'Projekte',
+				collapsable: false,
+				children: [
+					{
+						title: 'ITVSH Komponenten',
+						collapsable: false,
+						children: ['projects/itvsh/'],
+					},
+					{
+						title: 'SH Hüttenerberge',
+						collapsable: false,
+						children: ['projects/itvsh/'],
+					},
+				],
+			},
+		],
 	},
 };

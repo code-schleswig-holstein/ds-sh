@@ -1,9 +1,9 @@
 <template>
   <div class="theme-container" :class="pageClasses" @touchstart="onTouchStart" @touchend="onTouchEnd">
-    <div class="u-container">
+    <div class="SectionMain-default u-container" v-if="!$page.frontmatter.home">
       <div class="u-limitWidth-12 u-align-center">
 
-        <div class="GridCol2MainAside-row u-row" v-if="!$page.frontmatter.home">
+        <div class="GridCol2MainAside-row u-row">
           <div class="GridCol2MainAside-col-aside u-col u-stack--2">
             <SearchBox/>
             <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -27,9 +27,9 @@
             </Page>
           </div>
         </div>
-        <Home v-if="$page.frontmatter.home" />
       </div>
     </div>
+    <Home v-if="$page.frontmatter.home" />
   </div>
 </template>
 <script>
