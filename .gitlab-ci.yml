@@ -6,7 +6,7 @@ pages:
 
   script:
   - npm install
-  - npm build
+  - npm build src
   artifacts:
     paths:
     - public
