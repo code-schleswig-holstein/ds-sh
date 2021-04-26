@@ -5,4 +5,4 @@ tagline: Akkordions
 # Akkordions
 
 
-![Akkordion](/img/components-graphics/comp_accordeon.png)
+![Akkordion](img/components-graphics/comp_accordeon.png)
