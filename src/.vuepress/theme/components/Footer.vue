@@ -10,9 +10,7 @@
               Reventlouallee 6<br/>
               24105 Kiel<br/>
               <a class="Base-iconLink" href="tel:+494319888650">+49 (0) 431 / 988 8650</a><br/>
-              <a class="Base-iconLink-fax" href="tel:+494319886161111">49 (0) 431 / 988 616 1111</a><br/>
               <a class="Base-iconLink" href="mailto:info@itvsh.de">info@itvsh.de</a><br/>
-              <a class="Base-iconLink" href="mailto:ea-poststelle@ea-sh.de-mail.de">ea-poststelle@ea-sh.de-mail.de</a>
             </p>
           </div>
           <div class="SectionFooter-colMiddle u-col u-marginBottom--r2">
