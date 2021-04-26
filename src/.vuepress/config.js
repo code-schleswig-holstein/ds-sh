@@ -16,7 +16,7 @@ module.exports = {
 	 * ref：https://v1.vuepress.vuejs.org/config/#head
 	 */
 	head: [
-		['link', { rel: 'icon', href: '/img/logo.png' }],
+		['link', { rel: 'icon', href: '/icons/android-chrome-512x512.png' }],
 		['link', { rel: 'manifest', href: '/manifest.json', crossOrigin: 'use-credentials' }],
 		['meta', { name: 'theme-color', content: '#3A78B8' }],
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -148,9 +148,13 @@ module.exports = {
 						title: 'Einstieg',
 						path: '/components/',
 					},
-					'components/links',
+					'components/accordion',
 					'components/buttons',
-					'components/text-styles',
+					'components/form-elemente',
+					'components/messages',
+					'components/links',
+					'components/progress',
+					'components/search',
 				],
 			},
 			// {

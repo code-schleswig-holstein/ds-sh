@@ -1,7 +1,7 @@
 <template>
   <main class="page-container">
     <slot name="top" />
-    <Content class="theme-content"/>
+    <Content class="theme-content u-stack--2"/>
     <PageEdit />
     <slot name="bottom" />
   </main>
