@@ -9,6 +9,7 @@ module.exports = {
 	 */
 	description: description,
 	theme: 'nc-provider',
+	dest: 'dist',
 	/**
 	 * Extra tags to be injected to the page HTML `<head>`
 	 *
