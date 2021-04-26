@@ -6,7 +6,7 @@
         <section class="u-limitWidth-12 u-align-center">
           <div class="GridCol1Main-row u-row">
             <div class="GridCol1Main-col u-col u-stack--2">
-              <lottie-animation class="u-align-center"  :path="$withBase('./img/development.json')" :speed="0.8" :width="256"/>
+              <lottie-animation class="u-align-center"  :path="$withBase('./img/doku.json')" :speed="0.8" :width="415"/>
             </div>
           </div>
         </section>

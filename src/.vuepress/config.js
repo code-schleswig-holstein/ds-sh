@@ -152,22 +152,22 @@ module.exports = {
 					'components/text-styles',
 				],
 			},
-			{
-				title: 'Projekte',
-				collapsable: false,
-				children: [
-					{
-						title: 'ITVSH Komponenten',
-						collapsable: false,
-						children: ['projects/itvsh/'],
-					},
-					{
-						title: 'SH Hüttenerberge',
-						collapsable: false,
-						children: ['projects/itvsh/'],
-					},
-				],
-			},
+			// {
+			// 	title: 'Projekte',
+			// 	collapsable: false,
+			// 	children: [
+			// 		{
+			// 			title: 'ITVSH Komponenten',
+			// 			collapsable: false,
+			// 			children: ['projects/itvsh/'],
+			// 		},
+			// 		{
+			// 			title: 'SH Hüttenerberge',
+			// 			collapsable: false,
+			// 			children: ['projects/itvsh/'],
+			// 		},
+			// 	],
+			// },
 		],
 	},
 };
