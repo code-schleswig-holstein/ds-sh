@@ -152,7 +152,7 @@ module.exports = {
 					'components/buttons',
 					'components/form-elemente',
 					'components/messages',
-					'components/links',
+					// 'components/links',
 					'components/progress',
 					'components/search',
 				],
