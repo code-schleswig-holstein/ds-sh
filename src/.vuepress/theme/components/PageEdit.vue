@@ -22,7 +22,7 @@ export default {
 
   computed: {
     lastUpdated () {
-      return this.$page.lastUpdated  && moment(this.$page.lastUpdated).locale("de", localization).format('DD. MMMM yyyy, h:mm')
+      return this.$page.lastUpdated  && moment(this.$page.lastUpdated).locale("de", localization).format('DD. MMMM yyyy, H:mm')
     },
 
     lastUpdatedText () {
