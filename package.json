@@ -21,6 +21,8 @@
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "@vuepress/plugin-pwa": "^1.8.2",
     "lottie-vuejs": "^0.4.0",
+    "vuepress-plugin-robots": "^1.0.1",
+    "vuepress-plugin-sitemap-tranhom": "^1.0.3",
     "vuepress-plugin-smooth-scroll": "^0.0.10"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@
       <div class="SectionHeader-menuSection" id="primarynavigation" aria-label="Primär">
         <a href="/" class="SectionHeader-logoSection" tabindex="-1">
           <img class="SectionHeader-logo SectionHeader-logo--small" :src="$withBase('/img/logo-sm.svg')" alt="ITVSH Design System" width="49" height="40"/>
+          <span class="u-visuallyHidden">ITVSH Design System Dokumentation</span>
         </a>
         <a href="/">
           <p class="Base-h1 u-textTransform--upper">Dokumentation</p>

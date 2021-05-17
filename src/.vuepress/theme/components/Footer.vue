@@ -4,7 +4,7 @@
       <div class="u-limitWidth-12 u-align-center">
         <div class="SectionFooter-content u-row u-marginTop--r4">
           <div class="SectionFooter-colLeft u-col u-marginBottom--r2">
-            <img class="SectionFooter-logo u-marginBottom--r2" :src="$withBase('/img/itvsh-logo.svg')" alt="ITVSH Kommunale Digitalisierung" />
+            <img class="SectionFooter-logo u-marginBottom--r2" :src="$withBase('/img/itvsh-logo.svg')" alt="ITVSH Kommunale Digitalisierung" width="180" height="68"/>
             <p class="Base-p">
               IT-Verbund Schleswig-Holstein (ITVSH)<br/>
               Reventlouallee 6<br/>
@@ -14,7 +14,7 @@
             </p>
           </div>
           <div class="SectionFooter-colMiddle u-col u-marginBottom--r2">
-            <img class="SectionFooter-logo u-marginBottom--r2" :src="$withBase('/img/sh-logo.svg')" alt="Logo: Schleswig Holstein - Ministerium für Energiewende, Landwirtschaft, Umwelt, Natur und Digitalisierung" />
+            <img class="SectionFooter-logo u-marginBottom--r2" :src="$withBase('/img/sh-logo.svg')" alt="Logo: Schleswig Holstein - Ministerium für Energiewende, Landwirtschaft, Umwelt, Natur und Digitalisierung" width="200" height="92" />
           </div>
           <div class="SectionFooter-colRight u-col u-stack--1 u-marginBottom--r2">
             <div class="Copyrights u-marginBottom--r2">

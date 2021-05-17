@@ -27,9 +27,8 @@ module.exports = {
 			'meta',
 			{ name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' },
 		],
+		['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
 		['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-		['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-		['script', { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }],
 	],
 	module: {
 		rules: [
@@ -117,6 +116,26 @@ module.exports = {
 						'') + $page.frontmatter.image,
 				publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
 				modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+			},
+		],
+		[
+			'robots',
+			{
+				host: 'https://doku.design-system.sh',
+				disallowAll: false,
+				allowAll: true,
+				sitemap: '/sitemap.xml',
+				policies: [
+					{
+						userAgent: '*',
+					},
+				],
+			},
+		],
+		[
+			'sitemap',
+			{
+				hostname: 'https://doku.design-system.sh',
 			},
 		],
 	],
