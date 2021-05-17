@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "lint": "eslint --ext .js,.vue"
+    "lint": "markdownlint src"
   },
   "license": "MIT",
   "dependencies": {
@@ -34,6 +34,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
+    "markdownlint-cli": "^0.27.1",
     "postcss-loader": "^4.2.0",
     "rfs": "^9.0.3",
     "sass": "^1.32.8",
