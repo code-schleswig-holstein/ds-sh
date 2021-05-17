@@ -13,16 +13,14 @@ Für die visuelle Designphase umfasst es darüberhinaus gestaltungsnahe, jedoch 
 
 ## Contributing
 
-Contributions are always welcome!
+Mitmachen ist sehr wilkommen!
 
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
+Hier findest du eine Anleitung zum mitmacehn. `contributing.md` 
 
   
 ## Support
 
-For support, contact info@itvsh.de or read more informations on the project page: https://www.design-system.sh.
+Für Hilfe, schreiben Sie eine E-Mail an info@itvsh.de oder schauen Sie auf unserer Informationswebsite vorbei https://www.design-system.sh.
 
   
 ## Tech Stack
