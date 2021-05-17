@@ -132,12 +132,6 @@ module.exports = {
 				],
 			},
 		],
-		[
-			'sitemap',
-			{
-				hostname: 'https://doku.design-system.sh',
-			},
-		],
 	],
 	/**
 	 * Theme configuration, here is the default theme configuration for VuePress.
