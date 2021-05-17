@@ -1,6 +1,6 @@
 {
   "name": "ITVSH-Design-System-Dokumentation",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Dokumentation zum Design System des ITVSH",
   "main": "index.js",
   "authors": {
@@ -8,7 +8,7 @@
     "email": "krawietz@new-communication.de",
     "company": "New Communication GmbH"
   },
-  "repository": "git@gitlab.nc-lab.de:nc/Design-System-Doku.git",
+  "repository": "git@gitlab.com:itv.sh1/design-system.sh.git",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
