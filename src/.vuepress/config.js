@@ -128,7 +128,7 @@ module.exports = {
 	themeConfig: {
 		title: 'ITVSH Design System Dokumentation',
 		repoLabel: 'Gitlab',
-		repo: 'https://gitlab.nc-lab.de/nc/Design-System-Doku',
+		repo: 'https://gitlab.com/itv.sh1/design-system.sh',
 		editLinks: true,
 		editLinkText: 'Hilf uns diese Seite zu verbessern!',
 		docsBranch: 'main',
