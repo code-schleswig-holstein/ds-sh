@@ -1,6 +1,4 @@
 const { description } = require('../../package.json');
-const { CI_PAGES_URL } = process.env;
-const base = CI_PAGES_URL && new URL(CI_PAGES_URL).pathname;
 
 module.exports = {
 	/**
@@ -12,7 +10,6 @@ module.exports = {
 	 */
 	description: description,
 	theme: 'nc-provider',
-	base: base,
 	dest: 'public',
 
 	/**
