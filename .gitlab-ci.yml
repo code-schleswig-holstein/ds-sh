@@ -19,7 +19,6 @@ deploy:
     paths:
       - node_modules/
   script:
-    - yarn cache clean
     - yarn install
     - yarn build
   artifacts:
