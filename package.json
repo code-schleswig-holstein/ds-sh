@@ -15,6 +15,7 @@
     "lint": "markdownlint src"
   },
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-last-updated": "^1.8.2",
