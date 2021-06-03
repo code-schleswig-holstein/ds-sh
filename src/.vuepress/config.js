@@ -1,4 +1,7 @@
 const { description } = require('../../package.json');
+const { CI_PAGES_URL } = process.env;
+const base = CI_PAGES_URL && new URL(CI_PAGES_URL).pathname;
+
 module.exports = {
 	/**
 	 * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -9,10 +12,8 @@ module.exports = {
 	 */
 	description: description,
 	theme: 'nc-provider',
-	base: '/',
+	base: base,
 	dest: 'public',
-
-	publicPath: process.env.NODE_ENV === 'production' ? '/design-system.sh/' : '/',
 
 	/**
 	 * Extra tags to be injected to the page HTML `<head>`
