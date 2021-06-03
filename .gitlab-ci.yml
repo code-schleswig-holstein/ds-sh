@@ -4,7 +4,7 @@ stages:
 
 linting:
   stage: linting
-  image: node:14.15.1
+  image: node:lts
   cache:
     paths:
     - node_modules/
@@ -14,13 +14,13 @@ linting:
 
 deploy:
   stage: deploy
-  image: node:14.15.1
-  cache:
-    paths:
-      - node_modules/
+  image: node:lts
+#  cache:
+#    paths:
+#      - node_modules/
   script:
+    - yarn cache verify
     - yarn install
-    - rm -rf public
     - yarn build
   artifacts:
     expire_in: 1 day
