@@ -9,7 +9,9 @@ module.exports = {
 	 */
 	description: description,
 	theme: 'nc-provider',
+	base: '/',
 	dest: 'public',
+
 	/**
 	 * Extra tags to be injected to the page HTML `<head>`
 	 *
@@ -63,7 +65,7 @@ module.exports = {
 		[
 			'@vuepress/pwa',
 			{
-				serviceWorker: false,
+				serviceWorker: true,
 				popupComponent: 'SWUpdatePopup',
 				updatePopup: {
 					message: 'Neue Inhalte sind verfügbar.',
