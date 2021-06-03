@@ -8,7 +8,7 @@
     "email": "krawietz@new-communication.de",
     "company": "New Communication GmbH"
   },
-  "repository": "git@gitlab.com:itv.sh1/design-system.sh.git",
+  "repository": "git@gitlab.com:itvsh/design-system.git",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
