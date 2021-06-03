@@ -3,6 +3,7 @@
   "short_name": "DS",
   "lang": "de-DE",
   "start_url": "/",
+  "version": "1.0",
   "display": "standalone",
   "theme_color": "#003064",
   "background_color": "#ffffff",
