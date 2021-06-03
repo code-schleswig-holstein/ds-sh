@@ -15,10 +15,15 @@ linting:
 deploy:
   stage: deploy
   image: node:14.15.1
+  cache:
+    paths:
+      - node_modules/
   script:
     - yarn install
+    - rm -rf public
     - yarn build
   artifacts:
+    expire_in: 1 day
     paths:
     - public
   only:

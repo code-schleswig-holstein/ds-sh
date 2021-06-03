@@ -12,6 +12,8 @@ module.exports = {
 	base: '/',
 	dest: 'public',
 
+	publicPath: process.env.NODE_ENV === 'production' ? '/design-system.sh/' : '/',
+
 	/**
 	 * Extra tags to be injected to the page HTML `<head>`
 	 *
