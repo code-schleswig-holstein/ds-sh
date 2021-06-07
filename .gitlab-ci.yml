@@ -1,6 +1,6 @@
 stages:
   - linting
-  - deploy
+  - pages
 
 linting:
   stage: linting
@@ -12,8 +12,8 @@ linting:
     - yarn install
     - yarn lint
 
-deploy:
-  stage: deploy
+pages:
+  stage: pages
   image: node:lts
   cache:
     paths:
