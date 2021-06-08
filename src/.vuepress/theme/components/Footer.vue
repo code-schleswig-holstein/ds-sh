@@ -45,6 +45,15 @@
                 <p class="Base-p">Veröffentlichung der Texte und Grafiken unter CC-Lizenz:</p>
                 <p class="Base-p">CC BY-NC-SA –</p>
                 <p class="Base-p">Namensnennung-NichtKommerziell-Weitergabe unter gleichen Bedingungen</p>
+                <div class="Copyrights">
+                  <div class="Copyrights-icon">
+                    <svg class="u-scalingInlineSVG" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 512 512" preserveAspectRatio="xMidYMin slice" style="padding-bottom: 100%;">
+                      <path d="M327.83 359.882l42.086 84.203c59.474-38.407 95.549-103.859 95.549-175.829 0-115.483-93.973-209.456-209.473-209.456-115.484 0-209.457 93.973-209.457 209.456 0 71.97 36.059 137.422 95.533 175.829l42.102-84.203c-27.915-21.79-44.532-55.205-44.532-91.626 0-64.153 52.2-116.353 116.354-116.353 64.17 0 116.37 52.2 116.37 116.353 0 36.42-16.617 69.836-44.532 91.626m32.266 139.853a22.93 22.93 0 01-7.34-1.2 23.217 23.217 0 01-13.48-11.676L276.828 361.95c-5.747-11.494-1.1-25.467 10.378-31.214 23.825-11.922 38.62-35.862 38.62-62.48 0-38.505-31.33-69.818-69.835-69.818-38.506 0-69.82 31.313-69.82 69.818 0 26.618 14.796 50.558 38.605 62.48 11.478 5.747 16.125 19.737 10.377 31.214l-62.446 124.91a23.217 23.217 0 01-13.48 11.674c-5.846 1.97-12.25 1.494-17.767-1.264C54.203 453.543 0 365.793 0 268.256 0 127.092 114.827 12.265 255.992 12.265S512 127.092 512 268.256c0 97.52-54.22 185.287-141.477 229.014a23.23 23.23 0 01-10.427 2.465"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="Base-p">Veröffentlichung des Codes unter EUPL</p>
+                <p class="Base-p"><a class="Base-iconLink" href="https://www.design-system.sh/mitwirken/">Mitwirken</a></p>
               </div>
             </div>
           </div>
