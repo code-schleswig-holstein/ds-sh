@@ -58,6 +58,14 @@
             </div>
           </div>
         </div>
+        <ul class="FooterNavigation u-paddingBottom--r1">
+          <li class="FooterNavigation-item Base-p">
+            <a href="https://www.design-system.sh/impressum/" class="Base-iconLink" >Impressum</a>
+          </li>
+          <li class="FooterNavigation-item Base-p">
+            <a href="https://itvsh.de/datenschutz/" class="Base-iconLink">Datenschutz</a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>
