@@ -15,6 +15,6 @@ features:
   linkText: Kommunale Komponenten
 - title: Weiterentwickeln
   details: Der User-Centered-Design-Ansatz soll jedoch auch für die Nutzer:innen dieses Portal gelten Projektmanager:innen, Designer:innen und Entwickler:innen sind aufgerufen und herzlich eingeladen, dieses Portal mit ihrem Input und Ideen weiterzuentwicklen. Mit Ihrer Expertise, Ihren Erfahrungen, Praxis-Tipps und gefundenen Fehlern helfen Sie, digitale Dienste und Produkte für die Bürger:innen und Mitarbeitenden in Kommunen und Behörden zu verbessern.
-  link: https://www.design-system.sh/mitmachen
+  link: https://www.design-system.sh/mitwirken/
   linkText: Mitmachen und Weiterentwickeln
 ---
